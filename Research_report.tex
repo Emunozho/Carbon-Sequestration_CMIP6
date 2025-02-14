@@ -1,0 +1,367 @@
+\documentclass[9pt,twocolumn,twoside]{pnas-new}
+% Use the lineno option to display guide line numbers if required.
+\usepackage{xcolor}
+\templatetype{pnasresearcharticle} % Choose template
+% {pnasresearcharticle} = Template for a two-column research article
+% {pnasmathematics} %= Template for a one-column mathematics article
+% {pnasinvited} %= Template for a PNAS invited submission
+
+\begin{document}
+
+\title{Carbon sequestration trade-off between carbon assimilation and carbon losses through respiration and disturbances}
+
+% Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
+\author[a,b,1]{Estefanía Muñoz}
+\author[b]{Author Two}
+\author[b]{Author Two}
+\author[b]{Carlos A. Sierra}
+
+% Marcos Fernández-Martínez
+% Holger Metzler
+% Jacob A. Nelson
+% Mike O'Sullivan
+% Stephan Sitch
+% Sophia Walthe
+
+
+
+\affil[a]{CREAF, Cerdanyola del Vallès, Barcelona, Catalonia, Spain}
+\affil[b]{Theoretical Ecosystem Ecology Group, Max Planck Institute for Biogeochemistry, Jena, Germany}
+\affil[c]{Affiliation Three}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Muñoz}
+
+% Please add a significance statement to explain the relevance of your work
+\significancestatement{Authors must submit a 120-word maximum statement about the significance of their research paper written at a level understandable to an undergraduate educated scientist outside their field of speciality. The primary goal of the significance statement is to explain the relevance of the work in broad context to a broad readership. The significance statement appears in the paper itself and is required for all research papers.}
+
+% Please include corresponding author, author contribution and author declaration information
+\authorcontributions{Please provide details of author contributions here.}
+\authordeclaration{Please declare any competing interests here.}
+%\equalauthors{\textsuperscript{1}A.O.(Author One) contributed equally to this work with A.T. (Author Two) (remove if not applicable).}
+\correspondingauthor{\textsuperscript{1}Estefanía Muñoz. E-mail: e.munoz@creaf.uab.cat}
+
+% At least three keywords are required at submission. Please provide three to five keywords, separated by the pipe symbol.
+\keywords{Global warming mitigation $|$ Terrestrial ecosystems $|$ CMIP6 $|$  Carbon cycle}
+
+\begin{abstract}
+% 250 words
+
+The quantification of terrestrial ecosystems' carbon sequestration is crucial for understanding their role in mitigating global warming, with proper assessment requiring consideration of temporal scale. Our study quantified carbon sequestration by integrating carbon inputs and outputs over time to analyze the trade-off between high carbon assimilation rates associated with tropics and low carbon losses through respiration related to high latitudes, while also assessing the effect of disturbance-related carbon losses. For the analyses, we utilized results from 9 CMIP6 Earth System Models. Then we compared the findings with the results of non-coupled models (TRENDY) and in-situ measured data-based products (CarboScope, FLUXCOM-X, CAMS). Results show that when only assimilation and respiration are considered, tropics exhibit higher carbon sequestration during 1850-2014, but the inclusion of disturbances shifts higher sequestration to high latitudes. Comparisons among products in 2000-2014 reveal similar trends between CMIP6 and FLUXCOM-X for carbon sequestration without disturbances, albeit with lower FLUXCOM-X magnitudes. When disturbances are considered, most products indicate sequestration amounts in high latitudes, except CAMS, which favors mid-latitudes. These findings underscore the significant impact of disturbances on terrestrial carbon cycles over the past century, suggesting that ecosystems, particularly in the tropics, have the potential to sequester more carbon than they currently do.
+
+\end{abstract}
+
+\dates{This manuscript was compiled on \today}
+\doi{\url{www.pnas.org/cgi/doi/10.1073/pnas.XXXXXXXXXX}}
+
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+\firstpage[17]{3}
+
+%\firstpage[5]{17}
+% Use \firstpage to indicate which paragraph and line will start the second page and subsequent formatting. In this example, there are a total of 11 paragraphs on the first page, counting the first level heading as a paragraph. The value {12} represents the number of the paragraph starting the second page. If a paragraph runs over onto the second page, include a bracket with the paragraph line number starting the second page, followed by the paragraph number in curly brackets, e.g. "\firstpage[4]{11}".
+
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+\dropcap{T}errestrial ecosystems play a crucial role in mitigating climate change by sequestering approximately one-third of annual anthropogenic carbon dioxide emissions \cite{Ruehr2023}. The amount of carbon stored in an ecosystem is governed by the dynamic balance between carbon inputs and outputs, which fluctuate over time and space due to natural processes and human activities \cite{Malhi1999}. Carbon inputs primarily include processes such as photosynthesis, organic matter deposition, and soil carbon fixation. Conversely, carbon outputs arise from vegetation and soil respiration, microbial decomposition of organic matter, and disturbances like wildfires and land-use changes \citep{Wisniewski1993}. 
+
+These carbon fluxes exhibit pronounced temporal variations over both short and long timescales. For example, photosynthesis typically peaks during growing seasons, while respiration rates are closely tied to temperature fluctuations. Climate change and human activities, such as wildfires and land management, can further alter these fluxes \cite{Azizi-Rad2022,Matthews2023,Pierrat2024}. Neglecting these temporal dynamics may lead to inaccurate estimates of an ecosystem's carbon sequestration potential \cite{Munoz2023}.
+
+Spatial variability also plays a key role in ecosystem carbon dynamics. Tropical regions, with their favorable climate conditions—longer growing seasons, abundant sunlight, higher temperatures, and greater water availability—generally exhibit higher photosynthesis rates compared to extratropical regions. However, these same high temperatures and humidity in the tropics also drive elevated respiration rates by accelerating microbial activity and organic matter decomposition. In contrast, extratropical ecosystems face climatic constraints that limit gross primary production (GPP), but their cooler temperatures suppress respiration rates, leading to lower carbon outputs \cite{Varney2020,Sitch2024,Chanca2025}. As a result, while tropical ecosystems sequester more carbon in absolute terms, extratropical ecosystems may retain a higher proportion of the carbon they assimilate due to their reduced respiration losses. The balance between carbon inputs and outputs is further complicated by disturbances such as wildfires and land-use changes, which can drastically alter carbon fluxes \cite{Ruehr2023,Pierrat2024}. This raises an important question: Is carbon sequestration primarily driven by the high assimilation rates in the tropics or by the lower respiration rates in the extratropics? 
+
+We address these questions using the Carbon Sequestration (CS) metric, a measure that integrates both the quantity of carbon stored in an ecosystem and the duration it remains stored \cite{Sierra2021}. CS is calculated as the area under the curve of remaining carbon over time, effectively capturing how long ecosystems keep carbon out of the atmosphere. Using monthly outputs from gross primary productivity (GPP), heterotrophic respiration (r$_h$), autotrophic respiration (r$_a$), and net biome production (NBP), we calculated CS for the period 1850–2014 based on data from nine Earth System Models (ESMs) participating in the Coupled Model Intercomparison Project Phase 6 (\hyperlink{https://pcmdi.llnl.gov/CMIP6/}{CMIP6}). These models explicitly track carbon fluxes across the Earth system. Additionally, we calculated CS for a shorter period (2001–2014) using results from five different products: two model-based datasets (\hyperlink{https://pcmdi.llnl.gov/CMIP6/}{CMIP6} and \hyperlink{https://globalcarbonbudgetdata.org/}{TRENDY}) and three products derived from in-situ measurements (\hyperlink{https://www.bgc-jena.mpg.de/CarboScope/}{CarboScope}, \hyperlink{https://www.icos-cp.eu/data-products/fluxcom-x-global-fluxes-collection}{FLUXCOM-X}, and \hyperlink{https://ads.atmosphere.copernicus.eu/datasets/cams-global-greenhouse-gas-inversion?tab=overview}{CAMS}).
+
+By accurately quantifying terrestrial carbon sequestration, we aim to deepen our understanding of ecosystem carbon dynamics to inform better land management practices and enhance strategies to maximize ecosystems’ capacity to mitigate climate change effectively.
+
+
+
+
+% \begin{itemize}
+%     \setlength\itemsep{-0.2em}
+%     \item Importance of carbon sequestration quantification.
+%     \item Describe how carbon sequestration depends on carbon inputs and outputs, how they vary over time, and why its quantification should involve the temporal dimension of both inputs and outputs.
+%     \item State that carbon assimilation is greater in the tropics than in the extratropics, but respiration is also greater, and the contrary occurs in the extratropics. This is when carbon outputs resulting from disturbances such as deforestation and fires are not considered.
+%     \item RQ: Is carbon sequestration dominated by the higher rates of carbon assimilation in the tropics or the lower rates of respiration in the extratropics, and what happens when carbon outputs due to disturbances are considered?
+%     \item To answer this question we analyzed three specific questions: i) How are the latitudinal variations of carbon sequestration?, ii) How are the time variations of carbon sequestration? and iii) how are the effects of carbon releases due to disturbances in carbon sequestration?
+%     \item The questions are analyzed using the Carbon Sequestration (CS) metric defined as the area under the curve of remaining carbon over time \cite{Sierra2021} since this approach considers both soil carbon stocks and the time carbon stays out of the atmosphere.
+  
+%     \item CS is calculated from the results of 9 Earth System Models (ESM) from the Coupled Model Intercomparison Project Phase 6 (\hyperlink{https://pcmdi.llnl.gov/CMIP6/}{CMIP6}) which explicitly track carbon movement in the Earth system. Calculations included monthly data on gross primary productivity (GPP), heterotrophic respiration (r$_h$), autotrophic respiration (r$_a$), and net biome production (NBP) from 1850 to 2014.
+%     \item Then, CS is calculated for a shorter period (2001-2014) using the results of 5 different products. Two products based on models (\hyperlink{https://pcmdi.llnl.gov/CMIP6/}{CMIP6} and \hyperlink{https://globalcarbonbudgetdata.org/}{TRENDY}) and three products based on in-situ measurements (\hyperlink{https://www.bgc-jena.mpg.de/CarboScope/}{CarboScope}, \hyperlink{https://www.icos-cp.eu/data-products/fluxcom-x-global-fluxes-collection}{FLUXCOM-X}, and \hyperlink{https://ads.atmosphere.copernicus.eu/datasets/cams-global-greenhouse-gas-inversion?tab=overview}{CAMS}).
+% \end{itemize}
+
+%\parshape=0
+
+
+
+\section*{Results}
+
+\subsection*{Spatial variations of Carbon Sequestration} 
+Carbon Sequestration (CS) calculations using NEP from eight CMIP6 models (\textcolor{red}{Table S1 (see SI.tex)}) reveal a predominantly positive global distribution, with notable exceptions in polar regions and desertic zones such as Sahara, Atacama, Arabian, Central Asia and Gobi deserts (Fig.~\ref{fig:CMIP6_NEP_map}a). Forests exhibit the highest CS values, particularly in the Amazon, Eastern USA, Congo basin, Western Europe, Indonesia, Borneo, New Guinea, and Eastern China. The latitudinal CS mean shown in Fig.~\ref{fig:CMIP6_NEP_map}b demonstrates positive CS across all latitudes, indicating long-term carbon input surpasses output when disturbances are not considered. Peak CS occurs in the tropics (approximately 25$^{\circ}$S to 20$^{\circ}$N), while mid-latitudes (approximately 20-40$^\circ$N and 20-30$^\circ$S) show the lower values. 
+
+\begin{SCfigure*}[\sidecaptionrelwidth][t!]
+    \centering
+    \includegraphics[width=11.4cm]{CMIP6_NEP_CS_map_latitude_mean.pdf}
+    \caption{Carbon Sequestration (CS) spatial patterns from NEP from CMIP6 models (1850-2014). a) Global distributions of CS based on the weighted ensemble of 8 CMIP6 models, and b) latitudinal CS profiles for individual CMIP6 models (colored lines) and their ensemble (black line). The dotted line represents zero carbon sequestration and the shadow areas represent two standard deviations from the mean.}
+    \label{fig:CMIP6_NEP_map}
+\end{SCfigure*}
+
+The cumulative CS across latitudinal zones exhibits a consistent upward trend over time in all models, albeit with varying magnitudes. NOAA and CSIRO models show the highest sequestration values, while CCCma and BCC models show the lowest (Fig.~\ref{fig:CMIP6_NEP_time}a). Tropical regions have sequestered the largest amount of carbon from 1850 to 2014, followed by mid-latitudes (Fig.~\ref{fig:CMIP6_NEP_time}b-d). Although high latitudes sequester on average more carbon per unit area than mid-latitudes (Fig.~\ref{fig:CMIP6_NEP_map}b), the larger territorial expanse of mid-latitudes results in a greater total CS (Fig.~\ref{fig:CMIP6_NEP_time}). All CMIP6 models indicate a positive CS in the tropics during the studied period (Fig.~\ref{fig:CMIP6_NEP_time}b). However, in mid- and high-latitudes, at least one model (BCC) shows negative CS, where accumulated respiration exceeds GPP (Fig.~\ref{fig:CMIP6_NEP_time}c,d). Additionally, three models indicate nearly zero CS in high latitudes (Fig.~\ref{fig:CMIP6_NEP_time}d).
+
+\begin{figure}%[\sidecaptionrelwidth][t!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{CMIP6_NEP_CS_time_final.pdf}
+    \caption{Time accumulation of Carbon Sequestration (CS) (left panel) and CS at the end of the period from 1850 to 2014 (right panel) calculated using NEP for a) global, b) tropics, c) mid-latitudes, and d) high-latitudes zones calculated using the results of 8 models from CMIP6. Black lines and bars indicate the results using the ensemble of the models. The dotted lines indicate null values of CS.}
+    \label{fig:CMIP6_NEP_time}
+\end{figure}
+
+\subsection*{Disturbance impacts on Carbon Sequestration} 
+The previous results, based on NEP, only account for climate variations and exclude disturbances like deforestation and fires. When using Net Biome Production (NBP) to calculate CS instead, which includes disturbance, CS dynamics change significantly. The values of CS calculated with NBP are about two orders of magnitude smaller than with NEP (Figs.~\ref{fig:CMIP6_NEP_time}a and ~\ref{fig:CMIP6_NBP_time}a) and are predominantly negative. Globally accumulated CS is negative for all CMIP6 models except CNRM and CSIRO, with the ensemble indicating a carbon debt of approximately 0.8 PgC yr from 1850-2014 (Fig.~\ref{fig:CMIP6_NBP_time}a). This indicates that terrestrial ecosystems lost more carbon than they gained during this period. High latitudes show the least negative values, followed by the tropics (Fig.~\ref{fig:CMIP6_NBP_time}b-d). Negative CS values are observed in 5 out of 8 models for the tropics, 6 for mid-latitudes, and 5 for high latitudes (Fig.~\ref{fig:CMIP6_NBP_time}b-d). Notably, the ensemble accumulation of CS over time is no longer monotonic as when using NEP; after decreasing from 1850 to around 1970, it slightly increases. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{CMIP6_NBP_CS_time_final.pdf}
+    \caption{Time accumulation of Carbon Sequestration (CS) (left panel) and CS at the end of the period from 1850 to 2014 (right panel) calculated using NBP for a) global, b) tropics, c) mid-latitudes, and d) high-latitudes zones calculated using the results of 8 models from CMIP6. Black lines and bars indicate the results using the ensemble of the models. The dotted lines indicate null values of CS.}
+    \label{fig:CMIP6_NBP_time}
+\end{figure}
+
+\subsection*{Comparison of CMIP6 carbon sequestration with other data- and model-based products}
+
+Carbon Sequestration calculations for 2000-2014 consistently show higher values when derived from NEP compared to NBP (left and right panel of Fig.~\ref{fig:Comparison_models}, respectively). NEP-based CS from CMIP6, TRENDY, and FLUXCOM-X indicate that tropical regions have the highest values, while high latitudes have the lowest, aligning with previous results in Fig.~\ref{fig:CMIP6_NEP_time}. CMIP6 ensemble yields the highest global CS values, while TRENDY shows the lowest. Although both ensemble models display similar latitudinal zone dynamics, CMIP6 consistently surpasses TRENDY by up to 250 PgC globally. This substantial difference observed despite some TRENDY models being used in CMIP6 Earth System Models underscores the impact of coupling terrestrial models with climate models and the explicit modeling of carbon movement throughout the Earth System in CMIP6. Then, when using NBP, mid-latitudes show the highest CS values for CMIP6, TRENDY, and CAMS, but not for CarboScope (left panel in Fig.~\ref{fig:Comparison_models}). This finding is consistent with the CMIP6 results for the 1850-2014 period. However, when examining the common 14-year timeframe (2001-2014) across all products, CS values are predominantly positive, except for CAMS in tropical regions. This shift towards positive values likely stems from the increasing trend in CS observed in Fig.~\ref{fig:CMIP6_NBP_time} from around 1970 onwards.  In this shorter timeframe, tropical regions shift from having the second-highest CS to the lowest, with CAMS even indicating a negative value. For NBP-based calculations, data-driven models (CAMS and CarboScope) show higher CS values than the model-based products. CMIP6 and TRENDY yield similar CS values when using NBP, with CMIP6 slightly higher, but the difference is less pronounced compared to NEP-based calculations.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{Comparison_NEPvsNBP.pdf}
+    \caption{Carbon sequestration (CS) across different products (2001-2014) calculated using NEP or NEE (left panel) and NBP (right panel) for a) global, b) tropics, c) mid-latitudes, and d) high-latitudes. The dotted lines indicate the null values of CS. CMIP6 and TRENDY CS values correspond to the ensemble of their respective models.}
+    \label{fig:Comparison_models}
+\end{figure}
+
+\section*{Discussion}
+
+\subsection*{Trade-off high carbon assimilation and low respiration}
+
+\begin{itemize}
+    \item Positive CS values across all latitudes when disturbances are not considered, and higher values in forests. 
+    \item Tropics sequester more carbon per area unit when disturbances are not considered, i.e., high assimilation predominates over low respiration.      
+\end{itemize}
+
+
+% En bosques donde ha habido un uso intensive como en Euroasia y Norteaméroica, los efectos se acumulan, hay como una "deuda" de carbón. Mientras en bosques más protegidos como en el Congo, el suroeste de asua y el Amazonas, hay cierta "ganancia".
+% % 
+
+
+\subsection*{Consequences of forest disturbances}
+\begin{itemize}
+    \item When CS is calculated with NBP instead of NEP the values are much smaller. 
+    \item CS is now predominantly negative, i.e., cumulative respiration exceeds assimilation.
+    \item Tropics are not more the latitudinal zones with higher CS but high latitudes, so low losses (respiration+disturbances) predominate over high assimilation.
+    \item CS over time is no longer monotonic, it begins to increase slightly around 1970. When examining the common 14-year timeframe (2001-2014) across all products, CS values are predominantly positive, except for CAMS in tropical regions. This shift towards positive values likely stems from the increasing trend in CS observed from around 1970 onwards.
+    \item In this shorter timeframe, tropical regions shift from having the second- highest CS to the lowest, with CAMS even indicating a negative value.
+\end{itemize}
+
+% NEP: Factor climática. Efecto de las variaciones en el clima.
+% NBP: efecto del uso del suelo y cambio del suelo. En algunos modelos se considers el fuego.
+
+%Net Ecosystem Production denotes the net accumulation of organic matter or carbon by an ecosystem; NEP is the difference between the rate of production of living organic matter (NPP) and the decomposition rate of dead organic matter (heterotrophic respiration, RH). Heterotrophic respiration includes losses by herbivory and the decomposition of organic debris by soil biota. Global NEP is estimated to about 10 Gt C yr-1. NEP can be measured in two ways: One is to measure changes in carbon stocks in vegetation and soil; the other is to integrate the fluxes of CO2 into and out of the vegetation (the net ecosystem exchange, NEE) with instrumentation placed above (Aubinet et al., 2000). The precision of both of these methods is improving.
+
+%Net Biome Production denotes the net production of organic matter in a region containing a range of ecosystems (a biome) and includes, in addition to heterotrophic respiration, other processes leading to loss of living and dead organic matter (harvest, forest clearance, and fire, etc.) (Schulze and Heimann, 1998). NBP is appropriate for the net carbon balance of large areas (100-1000 km2) and longer periods of time (several years and longer). In the past, NBP has been considered to be close to zero (Figure 1-2). Compared to the total fluxes between atmosphere and biosphere, global NBP is comparatively small; NBP for the decade 1989-1998 has been estimated to be 0.7 ± 1.0 Gt C yr-1 (Table 1-2)-about 1 percent of NPP and about 10 percent of NEP.
+
+%NEE=NEP. These terms are used somewhat interchangeably, with NEE used more often to refer to these fluxes when they are addressed from a measurement of gas exchange rates using atmospheric measurements over time scales of hours, whereas NEP is more often used to refer to the same processes if measurements are based on ecosystem-carbon stock changes, typically measured over a minimal period of one year. However, these differences in usage are not firmly embedded in formal definitions.
+
+\subsection*{Agreement and discrepancies among products}
+\begin{itemize}
+    \item The cumulative CS across latitudinal zones exhibits a consistent upward trend over time in all models.  NOAA and CSIRO models show higher CS values and CCCma and BCC the lowest. 
+    \item All CMIP6 models indicate a positive CS (NEP) in the tropics during the studied period (Fig. 2b). In mid- and high-latitudes, at least one model (BCC) shows accumulated respiration exceeds GPP. 
+    \item Globally accumulated CS (NBP) is negative for all CMIP6 models except CNRM and CSIRO.
+    \item Negative CS values are observed in 5 out of 8 models for the tropics, 6 for mid-latitudes, and 5 for high latitudes
+    \item NEP-based CS from CMIP6, TRENDY, and FLUXCOM-X indicate that tropical regions have the highest values, while high latitudes have the lowest, aligning with CMIP6 results for the complete time series.
+    \item CMIP6 ensemble yields the highest global CS (NEP) values, while TRENDY shows the lowest. Although both ensemble models display similar latitudinal zone dynamics, CMIP6 consistently surpasses TRENDY by up to 250 PgC globally. CMIP6 and TRENDY yield similar CS values when using NBP, with CMIP6 slightly higher, but the difference is less pronounced compared to NEP-based calculations.
+    \item When using NBP, mid-latitudes show the highest CS values for CMIP6, TRENDY, and CAMS, but not for CarboScope.
+    \item For NBP-based calculations, data-driven models (CAMS and CarboScope) show higher CS values than the model-based products.
+    
+\end{itemize}
+
+\subsection*{Implications for climate change mitigation}
+\begin{itemize}
+    \item Importance of temporal scale consideration. The research underscores the importance of considering both carbon inputs and outputs, as well as disturbances when developing climate mitigation strategies involving terrestrial ecosystems.
+    \item Disturbances have had a significant impact on terrestrial carbon cycles over the past century, particularly in tropical regions.
+    \item Tropical ecosystems have the potential to sequester more carbon than they currently do, suggesting opportunities for enhanced mitigation efforts in these areas.
+    \item Different carbon cycle models and data products show varying results, highlighting the need for continued refinement and comparison of these tools.
+    \item Understanding the spatial distribution of carbon sequestration potential can help prioritize areas for ecosystem-based mitigation approaches.
+\end{itemize}
+
+
+\newpage
+\matmethods{
+
+\subsection*{Datasets} We calculated the carbon sequestration based on NEP (or NEE) and NBP outputs from two model intercomparison products and three data-driven products.
+
+\subsubsection*{Model intercomparison products} 
+We used the results of GPP, r$_a$, r$_h$, and NBP from a set of Earth System Models (ESMs) participating in the most recent climate-carbon simulations under the sixth phase of the Coupled Model Intercomparison Project (CMIP6) \citep{Eyring2016}. Eight models provided monthly outputs for NBP, while eight (seven overlapping) supplied data for the remaining variables of interest in the esm-hist simulation (\textcolor{red}{see Table~S1}). These simulations span the period from 1850 to 2014 and are forced by prescribed anthropogenic CO$_2$ emissions rather than CO$_2$ concentrations. The data were obtained from The German Climate Computing Centre \hyperlink{https://cmip-data-pool.dkrz.de/CMIP6-Data-Pool.html}{DKRZ}. In addition, we used results from Dynamic Global Vegetation Models (DGVMs) compiled by the TRENDY v13 project \citep{Sitch2024}. Twenty models provided monthly outputs of GPP, r$_a$, r$_h$, and 18 models provided monthly NBP (\textcolor{red}{see Table~S2}). We used experiment S3, which accounts for variations in atmospheric CO$_2$ and climate and spans the period from 1700 to 2023. Data were requested through the \hyperlink{https://globalcarbonbudgetdata.org/closed-access-requests.html}{Global Carbon Budget}. 
+
+Both CMIP6 and TRENDY intercomparison models were included in the analysis due to their distinct focuses. TRENDY DGVMs focus on simulating terrestrial vegetation dynamics and ecosystem processes, while CMIP6 ESMs provide a representation of the entire Earth system, incorporating simplified versions of DGVMs as subcomponents within a broader framework that also accounts for atmospheric, oceanic, and cryospheric processes \citep{Argles2022,Weng2022}. For both CMIP6 and TRENDY models, NEP values are calculated as $NEP=GPP-(r_a+r_h)$.
+
+% NBP: LPJml, DLEM, LPJ-GUESS only have annual data.
+% rh: LPJ-GUESS does not have it. 
+% CARDAMOM was removed to calculate the weights and the ensemble because it only has data from 2003.
+
+\subsubsection*{Data-driven products} Besides the model intercomparison products, we utilized data from two atmospheric CO$_2$ inversion products: CarboScope and CAMS. These products estimate land-atmosphere net carbon exchange fluxes by combining CO$_2$ concentration measurements, transport models, and information on anthropogenic carbon emission and land-atmosphere carbon exchange \citep{Kondo2022}. Specifically, we used the nbetEXToc\_v2024E version of \hyperlink{https://www.bgc-jena.mpg.de/CarboScope/?ID=nbetEXToc_v2024E}{CarboScope} \citep{Rodenbeck2005}, which provides daily data from 1957 to 2023 based on measurements from 173 sites. For \hyperlink{https://ads.atmosphere.copernicus.eu/datasets/cams-global-greenhouse-gas-inversion?tab=overview}{CAMS} \citep{Chevallier2013}, we used version v24, which includes monthly data from 1979 to 2020 derived from over 100 surface measurements sites. Additionally, we incorporate Net Ecosystem Exchange (NEE) results from \hyperlink{https://meta.icos-cp.eu/collections/zfwf1Ak2I7OlziGDTX8Xl6_T}{FLUXCOM-X} \citep{Nelson2024}, a machine-learning-based product trained on in-situ eddy covariance data. FLUXCOM-X provides monthly NEE estimates for the period 2001–2021
+
+In this study, we assume that -NEE and NEP are interchangeable since both represent the same underlying processes—GPP minus respiration—despite being calculated using different data sources. Note the NEE is negative when the ecosystem assimilates more CO$_2$ than it releases, which is opposite to the convention for NEP.
+
+
+% FLUXCOM-X: NEE (0.5°, monthly)  01/2001-12/2021
+% CarboScope: NBP (2.5° x 2°, daily) 01/1957-12/2023
+% CAMS: NBP (1.4° x 0.7°, monthly) 01/1979,12/2020
+
+\subsection*{Homogenization and ensemble calculations}
+To enable comparison, data from all products, as well as outputs from the different CMIP6 and TRENDY models, were regridded to a uniform $1^\circ\times1^\circ$ spatial resolution using the bilinear interpolation method implemented via \hyperlink{https://xesmf.readthedocs.io/}{xESMF \citep{zhuang2023}}. We standardized the temporal resolution to monthly for all datasets that were not originally in monthly format. CMIP6 calculations utilized the full-time series (1850–2014), while comparisons across products were restricted to their overlapping period, i.e., 2001–2014. Positive NEP and NBP values were defined as fluxes moving from the atmosphere to the land, which contrasts with the conventions used in inverse models.
+
+Then, to calculate the ensemble of CMIP6 and TRENDY models, we used a weighted averaging approach rather than a simple equal-weight average. This procedure assigns weights to each model based on its predictive performance against available data, following the multimodel inference framework presented by Burnham \& Anderson \cite{Burnham2002}, which builds on concepts developed by H. Akaike in the 1970s. The weighting procedure calculates each model's weight by measuring its distance from observed data. However, since we are dealing with global spatial models where direct observations are not available, we used data-driven products derived from sparse observations and scaled to the terrestrial surface. Specifically, we used FLUXCOM-X to calculate the NEP ensembles and CarboScope for NBP ensembles (chosen for its longer time series compared to CAMS). The calculation of weights ($w_i$) for each model $i$ is detailed in \textcolor{red}{SI, section x}. Once $w_i$ are determined, the model ensemble ($\overline{x}$) is computed as
+
+\begin{equation}
+    \overline{x}=\sum_{i=1}^{k}w_i \cdot x_i
+\end{equation}
+
+where $k$ is the total number of models, and $x_i$ are the values of the variable of interest for model $i$. In this case, $x$ corresponds to NEP or NBP. 
+The same weighting procedure is applied to create the ensemble of models from CMIP6 and TRENDY, using all data from periods that overlap with the available data periods of CarboScope (CMIP6:1957-2014, TRENDY:1957-2023) or FLUXCOM-X (CMIP6:2001-2014, TRENDY:2001-2021) (\textcolor{red}{see Fig. SX}).
+
+
+% Units:
+% CMIP6: kg m${-2}$ s${-1}$.
+% TRENDY: kg m${-2}$ s${-1}$.
+% FLUXCOM-X: g m${-2}$ d${-1}$.
+% CarboScope: PgC yr${-1}$
+% CAMS: g m${-2}$ s${-1}$.
+
+\subsection*{Carbon sequestration} 
+After harmonizing all NEP (or NEE) and NBP data to the same temporal and spatial scale and calculating the ensembles for CMIP6 and TRENDY, carbon sequestration (CS) is computed. Here, CS is defined as the storage of a certain mass of carbon ($M$) within a system over a given period ($t_0+T$). It is quantified as the area under the curve representing the evolution of carbon mass over time \citep{Sierra2021}, as
+
+\begin{equation}
+    \mbox{CS}\left(t_0,T\right):=\int^{t_0+T}_{t_0} \mbox{M}\left(t\right) dt.
+\end{equation}
+
+The mass ($M(t)$) is given by
+
+\begin{equation}
+    \mbox{M}\left(t\right)=\int^{t}_{t_0} s\left(t\right)-r\left(t\right) dt,
+\end{equation}
+
+where $s(t)$ is the gross flux rate of carbon removed from the atmosphere and stored into a system at a given time $t$, while $r(t)$ is the gross flux rate of carbon released from the system back to the atmosphere. This definition of CS accounts for both the fate of new carbon inputs and the legacy carbon already present in the system at $t_0$ \citep{Sierra2021}. It considers the total carbon mass under evaluation as the net balance between all inputs and outputs over the specified time horizon (see Fig.~1 in Muñoz et al. \citep{Munoz2024}). 
+
+When calculating global carbon sequestration or aggregating it by latitudinal zones, the grid areas are factored into the computation, removing spatial units. Latitudinal zones are defined as tropical: 22.5$^\circ$S-22.5$^\circ$N, mid-latitudes: 22.5$^\circ$S-55.0$^\circ$S and 22.5$^\circ$N-55.0S$^\circ$N, and high latitudes: $>$55.0$^\circ$N.
+}
+\showmatmethods{} % Display the Materials and Methods section
+
+\acknow{This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie SkłodowskaCurie grant agreement No 101110350 (DISEQ - The Drought Impact on the Climate Benefit of Carbon Sequestration).}
+
+\showacknow{} % Display the acknowledgments section
+
+
+%\bibsplit[2]
+%Use \bibsplit to split the references from the body of the text. Value "[2]" represents the number of reference in the left column (Note: Please avoid single column figures & tables on this page.)
+
+% Bibliography
+\subsection*{References}
+
+%References should be cited in numerical order as they appear in text; this will be done automatically via bibtex, e.g. \cite{belkin2002using} and \cite{berard1994embedding,coifman2005geometric,phdthesis,masterthesis}. All references cited in the main text should be included in the main manuscript file.
+
+\bibliography{biblio}
+
+\end{document}
+
+
+%\subsection*{Manuscript Length}
+
+%A standard 6-page article is approximately 4,000 words, 50 references, and 4 medium-size graphical elements (i.e., figures and tables). The preferred length of articles remains at 6 pages, but PNAS will allow articles up to a maximum of 12 pages.
+
+
+%\subsection*{Data Archival}
+
+%PNAS must be able to archive the data essential to a published article. Where such archiving is not possible, deposition of data in public databases, such as GenBank, ArrayExpress, Protein Data Bank, Unidata, and others outlined in the \href{https://www.pnas.org/author-center/editorial-and-journal-policies#materials-and-data-availability}{Information for Authors}, is acceptable.
+
+%\subsection*{Language-Editing Services}
+%Prior to submission, authors who believe their manuscripts would benefit from professional editing are encouraged to use a language-editing service (see list at https://www.pnas.org/author-center/language-editing). PNAS does not take responsibility for or endorse these services, and their use has no bearing on acceptance of a manuscript for publication.
+
+% \begin{figure}%[tbhp]
+% \centering
+% \includegraphics[width=.8\linewidth]{frog.pdf}
+% \caption{Placeholder image of a frog with a long example legend to show justification setting.}
+% \label{fig:frog}
+% \end{figure}
+
+
+
+% \begin{table}[t!]
+% \centering
+% \caption{Comparison of the fitted potential energy surfaces and ab initio benchmark electronic energy calculations}
+% \begin{tabular}{lrrr}
+% Species & CBS & CV & G3 \\
+% \midrule
+% 1. Acetaldehyde & 0.0 & 0.0 & 0.0 \\
+% 2. Vinyl alcohol & 9.1 & 9.6 & 13.5 \\
+% 3. Hydroxyethylidene & 50.8 & 51.2 & 54.0\\
+% \bottomrule
+% \end{tabular}
+
+% \addtabletext{nomenclature for the TSs refers to the numbered species in the table.}
+% \end{table}
+
+
+% \subsection*{Digital Figures}
+
+% EPS, high-resolution PDF, and PowerPoint are preferred formats for figures that will be used in the main manuscript. Authors may submit PRC or U3D files for 3D images; these must be accompanied by 2D representations in TIFF, EPS, or high-resolution PDF format. Color images must be in RGB (red, green, blue) mode. Include the font files for any text.
+
+% Images must be provided at final size, preferably 1 column width (8.7cm). Figures wider than 1 column should be sized to 11.4cm or 17.8cm wide. Numbers, letters, and symbols should be no smaller than 6 points (2mm) and no larger than 12 points (6mm) after reduction and must be consistent.
+
+% Figures and tables should be labelled and referenced in the standard way using the \verb|\label{}| and \verb|\ref{}| commands.
+
+% Figure \ref{fig:frog} shows an example of how to insert a column-wide figure. To insert a figure wider than one column, please use the \verb|\begin{figure*}...\end{figure*}| environment. Figures wider than one column should be sized to 11.4 cm or 17.8 cm wide. Use \verb|\begin{SCfigure*}...\end{SCfigure*}| for a wide figure with side legends.
+
+% \begin{SCfigure*}[\sidecaptionrelwidth][t!]
+% \centering
+% \includegraphics[width=11.4cm,height=11.4cm]{frog.pdf}
+% \caption{This legend would be placed at the side of the figure, rather than below it.}\label{fig:side}
+% \end{SCfigure*}
+
+
+% \subsection*{Tables}
+% Tables should be included in the main manuscript file and should not be uploaded separately.
+
+
+% \subsection*{Single column equations}
+
+% Authors may use 1- or 2-column equations in their article, according to their preference.
+
+% To allow an equation to span both columns, use the \verb|\begin{figure*}...\end{figure*}| environment mentioned above for figures.
+
+% Note that the use of the \verb|widetext| environment for equations is not recommended, and should not be used.
+
+% \begin{figure*}[bt!]
+% \begin{align*}
+% (x+y)^3&=(x+y)(x+y)^2\\
+%        &=(x+y)(x^2+2xy+y^2) \numberthis \label{eqn:example} \\
+%        &=x^3+3x^2y+3xy^3+x^3.
+% \end{align*}
+% \end{figure*}
+
+
+
+%\subsection*{Supporting Information Appendix (SI)}
+
+% Authors should submit SI as a single separate SI Appendix PDF file, combining all text, figures, tables, movie legends, and SI references. SI will be published as provided by the authors; it will not be edited or composed. Additional details can be found in the \href{https://www.pnas.org/authors/submitting-your-manuscript#manuscript-formatting-guidelines}{PNAS Author Center}. The PNAS Overleaf SI template can be found \href{https://www.overleaf.com/latex/templates/pnas-template-for-supplementary-information/wqfsfqwyjtsd}{here}. Refer to the SI Appendix in the manuscript at an appropriate point in the text. Number supporting figures and tables starting with S1, S2, etc.
+
+% Authors who place detailed materials and methods in an SI Appendix must provide sufficient detail in the main text methods to enable a reader to follow the logic of the procedures and results and also must reference the SI methods. If a paper is fundamentally a study of a new method or technique, then the methods must be described completely in the main text.
+
+% \subsubsection*{SI Datasets}
+
+% Supply .xlsx, .csv, .txt, .rtf, or .pdf files. This file type will be published in raw format and will not be edited or composed.
+
+
+% \subsubsection*{SI Movies}
+
+% Supply Audio Video Interleave (avi), Quicktime (mov), Windows Media (wmv), animated GIF (gif), or MPEG files. Movie legends should be included in the SI Appendix file. All movies should be submitted at the desired reproduction size and length. Movies should be no more than 10MB in size.
+
+
