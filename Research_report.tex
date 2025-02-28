@@ -1,6 +1,6 @@
 \documentclass[9pt,twocolumn,twoside]{pnas-new}
 % Use the lineno option to display guide line numbers if required.
-\usepackage{xcolor}
+%\usepackage{xcolor}
 \templatetype{pnasresearcharticle} % Choose template
 % {pnasresearcharticle} = Template for a two-column research article
 % {pnasmathematics} %= Template for a one-column mathematics article
@@ -8,12 +8,13 @@
 
 \begin{document}
 
-\title{Carbon sequestration trade-off between carbon assimilation and carbon losses through respiration and disturbances}
+%\title{Carbon sequestration trade-off between carbon assimilation and carbon losses through respiration and disturbances}
+\title{Tradeoffs between carbon assimilation and release reveal a key role of the tropics in long-term globa-scale carbon sequestration}
 
 % Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
 \author[a,b,1]{Estefanía Muñoz}
-\author[b]{Author Two}
-\author[b]{Author Two}
+%\author[b]{Author Two}
+%\author[b]{Author Two}
 \author[b]{Carlos A. Sierra}
 
 % Marcos Fernández-Martínez
@@ -21,7 +22,7 @@
 % Jacob A. Nelson
 % Mike O'Sullivan
 % Stephan Sitch
-% Sophia Walthe
+% Sophia Walther
 
 
 
@@ -47,7 +48,7 @@
 \begin{abstract}
 % 250 words
 
-The quantification of terrestrial ecosystems' carbon sequestration is crucial for understanding their role in mitigating global warming, with proper assessment requiring consideration of temporal scale. Our study quantified carbon sequestration by integrating carbon inputs and outputs over time to analyze the trade-off between high carbon assimilation rates associated with tropics and low carbon losses through respiration related to high latitudes, while also assessing the effect of disturbance-related carbon losses. For the analyses, we utilized results from 9 CMIP6 Earth System Models. Then we compared the findings with the results of non-coupled models (TRENDY) and in-situ measured data-based products (CarboScope, FLUXCOM-X, CAMS). Results show that when only assimilation and respiration are considered, tropics exhibit higher carbon sequestration during 1850-2014, but the inclusion of disturbances shifts higher sequestration to high latitudes. Comparisons among products in 2000-2014 reveal similar trends between CMIP6 and FLUXCOM-X for carbon sequestration without disturbances, albeit with lower FLUXCOM-X magnitudes. When disturbances are considered, most products indicate sequestration amounts in high latitudes, except CAMS, which favors mid-latitudes. These findings underscore the significant impact of disturbances on terrestrial carbon cycles over the past century, suggesting that ecosystems, particularly in the tropics, have the potential to sequester more carbon than they currently do.
+The quantification of terrestrial ecosystems' carbon sequestration is crucial for understanding their role in mitigating global warming, with proper assessment requiring consideration of temporal scale. Our study quantified carbon sequestration by integrating carbon inputs and outputs over time to analyze the trade-off between high carbon assimilation rates in regions such as the tropics and low carbon losses through respiration related to high latitudes, while also assessing the effect of disturbance-related carbon losses. For the analyses, we utilized results from 9 CMIP6 Earth System Models. Then we compared the findings with the results of non-coupled models (TRENDY) and in-situ measured data-based products (CarboScope, FLUXCOM-X, CAMS). Results show that when only assimilation and respiration are considered, tropics exhibit higher carbon sequestration during 1850-2014, but the inclusion of disturbances shifts higher sequestration to high latitudes. Comparisons among products in 2000-2014 reveal similar trends between CMIP6 and FLUXCOM-X for carbon sequestration without disturbances, albeit with lower FLUXCOM-X magnitudes. When disturbances are considered, most products indicate sequestration amounts in high latitudes, except CAMS, which favors mid-latitudes. These findings underscore the significant impact of disturbances on terrestrial carbon cycles over the past century, suggesting that ecosystems, particularly in the tropics, have the potential to sequester more carbon than they currently do.
 
 \end{abstract}
 
@@ -57,7 +58,8 @@ The quantification of terrestrial ecosystems' carbon sequestration is crucial fo
 
 \maketitle
 \thispagestyle{firststyle}
-\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}
+{\abscontentformatted}{\abscontent}}{}
 
 \firstpage{3}
 
@@ -66,18 +68,20 @@ The quantification of terrestrial ecosystems' carbon sequestration is crucial fo
 
 
 % If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
-\dropcap{T}errestrial ecosystems play a crucial role in mitigating climate change by sequestering approximately one-third of annual anthropogenic carbon dioxide emissions \cite{Ruehr2023}. The amount of carbon stored in an ecosystem is governed by the dynamic balance between carbon inputs and outputs, which fluctuate over time and space due to natural processes and human activities \cite{Malhi1999}. Carbon inputs primarily include processes such as photosynthesis, organic matter deposition, and soil carbon fixation. Conversely, carbon outputs arise from vegetation and soil respiration, microbial decomposition of organic matter, and disturbances like wildfires and land-use changes \citep{Wisniewski1993}. 
+%\dropcap{T}errestrial ecosystems play a crucial role in mitigating climate change by sequestering approximately one-third of annual anthropogenic carbon dioxide emissions \cite{Ruehr2023}. 
+\dropcap{T}he capacity of the terrestrial biosphere to take up and store about a third of anthropogenic carbon emissions derived from the combustion of fossil fuels depend to a large degree on the long-term balance between carbon inputs (assimilation) and outputs (release), 
+%The amount of carbon stored in an ecosystem is governed by the dynamic balance between carbon inputs and outputs, 
+which fluctuate over time and space due to natural processes and human activities \cite{Malhi1999}. Carbon inputs to terrestrial ecosystems are controlled primarily by photosynthesis, while carbon outputs arise from respiration of vegetation and soils as well as disturbances such as wildfires and land-use changes \citep{Wisniewski1993}. 
 
 These carbon fluxes exhibit pronounced temporal variations over both short and long timescales. For example, photosynthesis typically peaks during growing seasons, while respiration rates are closely tied to temperature fluctuations. Climate change and human activities, such as wildfires and land management, can further alter these fluxes \cite{Azizi-Rad2022,Matthews2023,Pierrat2024}. Neglecting these temporal dynamics may lead to inaccurate estimates of an ecosystem's carbon sequestration potential \cite{Munoz2023}. Spatial variability also plays a key role in ecosystem carbon dynamics. Tropical regions, with their favorable climate conditions—longer growing seasons, abundant sunlight, higher temperatures, and greater water availability—generally exhibit higher photosynthesis rates compared to extratropical regions. However, these same high temperatures and humidity in the tropics also drive elevated respiration rates by accelerating microbial activity and organic matter decomposition. In contrast, extratropical ecosystems face climatic constraints that limit gross primary production (GPP), but their cooler temperatures suppress respiration rates, leading to lower carbon outputs \cite{Varney2020,Sitch2024,Chanca2025}. As a result, while tropical ecosystems sequester more carbon in absolute terms, extratropical ecosystems may retain a higher proportion of the carbon they assimilate due to their reduced respiration losses. The balance between carbon inputs and outputs is further complicated by disturbances such as wildfires and land-use changes, which can drastically alter carbon fluxes \cite{Ruehr2023,Pierrat2024}. This raises an important question: Is carbon sequestration primarily driven by the high assimilation rates in the tropics or by the lower respiration rates in the extratropics? Moreover, how do disturbances influence this balance? 
 
-These questions should be addressed by a measure that accounts not only for carbon stocks in the ecosystems but also for how long that carbon remains stored. The time carbon remains stored is one of the biggest uncertainties when projecting how terrestrial vegetation will respond to increased atmospheric  CO$_2$ \cite{Friend2014}. Consequently, we use the Carbon Sequestration (CS) metric. CS is calculated as the area under the curve of remaining carbon over a selected time horizon, resulting from the balance between carbon inputs and outputs \cite{Sierra2021}. The units of CS are mass multiplied by time (e.g., MgC $\cdot$ year). This metric involves two integral calculations, which makes it effectively capture how long ecosystems keep carbon out of the atmosphere (\textcolor{red}{see Annex X}) and distinguish itself from the so-called tonne-years methods. 
+These questions should be addressed by a measure that accounts not only for carbon stocks in the ecosystems but also for how long that carbon remains stored. The time carbon remains stored is one of the biggest uncertainties when projecting how terrestrial vegetation will respond to increased atmospheric  CO$_2$ \cite{Friend2014}. Consequently, we use the Carbon Sequestration (CS) metric. CS is calculated as the area under the curve of remaining carbon over a selected time horizon, resulting from the balance between carbon inputs and outputs \cite{Sierra2021}. The units of CS are mass multiplied by time (e.g., MgC $\cdot$ year). This metric involves two integral calculations, which effectively capture how long ecosystems keep carbon out of the atmosphere (\textcolor{red}{see Annex X}) and distinguish itself from the so-called tonne-years methods. 
 
 We calculated CS for the period 1850–2014 using monthly outputs from gross primary productivity (GPP), heterotrophic respiration (r$_h$), autotrophic respiration (r$_a$), and net biome production (NBP),  based on data from nine Earth System Models (ESMs) participating in the Coupled Model Intercomparison Project Phase 6 (\hyperlink{https://pcmdi.llnl.gov/CMIP6/}{CMIP6}). These models explicitly track carbon fluxes across the Earth system. Additionally, we calculated CS for a shorter period (2001–2014) using results from five different products: two model-based datasets (\hyperlink{https://pcmdi.llnl.gov/CMIP6/}{CMIP6} and \hyperlink{https://globalcarbonbudgetdata.org/}{TRENDY}) and three products derived from in-situ measurements (\hyperlink{https://www.bgc-jena.mpg.de/CarboScope/}{CarboScope}, \hyperlink{https://www.icos-cp.eu/data-products/fluxcom-x-global-fluxes-collection}{FLUXCOM-X}, and \hyperlink{https://ads.atmosphere.copernicus.eu/datasets/cams-global-greenhouse-gas-inversion?tab=overview}{CAMS}).
 
 By accurately quantifying terrestrial carbon sequestration, we aim to deepen our understanding of ecosystem carbon dynamics to inform better land management practices and enhance strategies to maximize ecosystems’ capacity to mitigate climate change effectively.
 
-
-
+\newpage
 
 % \begin{itemize}
 %     \setlength\itemsep{-0.2em}
