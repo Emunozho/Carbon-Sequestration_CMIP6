@@ -65,85 +65,93 @@
 
 \section*{Model information of CMIP6 and TRENDY}
 
-\begin{table}[]
+
+\begin{table}[ht]
+\centering
 \label{Tab:CMIP6models}
 \caption{CMIP6 Earth system models included in this study and relevant features.}
-\begin{tabular}{lllll}
-\textbf{\begin{tabular}[c]{@{}l@{}}Earth system \\ model\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Modelling \\ centre\end{tabular}} & \textbf{NPP} & \textbf{NBP} & \textbf{References}                                                                                           \\ \hline
-ACCESS-ESM1-5                                                          & CSIRO                                                                & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Ziehn et al. (2020)\\ Haverd et al. (2018) \\ Trudinger et al. (2016)\end{tabular} \\
-BCC-CSM2-MR                                                            & BCC                                                                  & Yes          & No           & \begin{tabular}[c]{@{}l@{}}Wu et al. (2019) \\ Ji et al. (2008)\end{tabular}                                  \\
-CanESM5                                                                & CCCma                                                                & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Swart et al. (2019)\\ Melton et al. (2020) \\ Seiler et al. (2021)\end{tabular}    \\
-CESM2                                                                  & CESM                                                                 & No           & Yes          & \begin{tabular}[c]{@{}l@{}}Danabasoglu et al. (2020)\\ Lawrence et al. (2019)\end{tabular}                    \\
-CNRM-ESM2-1                                                            & CNRM                                                                 & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Séférian et al. (2019)\\ Delire et al. (2020)\end{tabular}                         \\
-GFDL-ESM4                                                              & GFDL                                                                 & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Dunne et al. (2020)\\ Zhao et al. (2018)\end{tabular}                              \\
-MPI-ESM1-2-LR                                                          & MPI                                                                  & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Mauritsen et al. (2019)\\ Goll et al. (2017) \\ Goll et al. (2015)\end{tabular}    \\
-NorESM2-LM                                                             & NCC                                                                  & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Seland et al. (2020)\\ Lawrence et al. (2019)\end{tabular}                         \\
-UKESM1-0-LL                                                            & UK                                                                   & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Sellar et al. (2020)\\ Wiltshire et al. (2021)\end{tabular}                        \\ \hline
+\begin{tabular}{llcccccl}
+\textbf{\begin{tabular}[c]{@{}l@{}}Earth system\\  model\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Modelling \\ centre\end{tabular}} & \multicolumn{1}{l}{\textbf{NPP}} & \multicolumn{1}{l}{\textbf{NPB}} & \multicolumn{1}{l}{\textbf{N cycle}}                     & \multicolumn{1}{l}{\textbf{Fires}}                       & \multicolumn{1}{l}{\textbf{\begin{tabular}[c]{@{}l@{}}Dynamic \\ vegetation\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}l@{}}Land carbon\\ model\end{tabular}} \\ \hline
+ACCESS-ESM1-5                                                          & CSIRO                                                                & Yes                              & Yes                              & \begin{tabular}[c]{@{}c@{}}Yes \\ (p-cycle)\end{tabular} & No                                                       & No                                                                                         & \begin{tabular}[c]{@{}l@{}}CABLE2.4 with\\ CASA-CNP\end{tabular}     \\
+BCC-CSM2-MR                                                            & BCC                                                                  & Yes                              & No                               & No                                                       & No                                                       & No                                                                                         & BCC-AVIM2                                                            \\
+CanESM5                                                                & CCCma                                                                & Yes                              & Yes                              & No                                                       & No                                                       & \begin{tabular}[c]{@{}c@{}}Only\\ wetlands\end{tabular}                                    & CLASS-CTEM                                                           \\
+CESM2                                                                  & CESM                                                                 & No                               & Yes                              & Yes                                                      & Yes                                                      & Yes                                                                                        & CLM5                                                                 \\
+CNRM-ESM2-1                                                            & CNRM                                                                 & Yes                              & Yes                              & Implicit                                                 & \begin{tabular}[c]{@{}c@{}}Yes \\ (Natural)\end{tabular} & No                                                                                         & ISBA-CTRIP                                                           \\
+NOAA-GFDL-ESM4                                                         & \begin{tabular}[c]{@{}l@{}}NOAA, \\ GFDL\end{tabular}                & Yes                              & Yes                              & No                                                       & Yes                                                      & Yes                                                                                        & LM4p1                                                                \\
+MPI-ESM1-2-LR                                                          & MPI                                                                  & Yes                              & Yes                              & Yes                                                      & Yes                                                      & Yes                                                                                        & JSBACH3.2                                                            \\
+NorESM2-LM                                                             & NCC                                                                  & Yes                              & Yes                              & Yes                                                      & Yes                                                      & No                                                                                         & CLM5                                                                 \\
+UKESM1-0-LL                                                            & UK                                                                   & Yes                              & Yes                              & Yes                                                      & No                                                       & Yes                                                                                        & JULES-ES1.0                                                          \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[]
+
+\begin{table}[ht]
+\centering
 \label{Tab:TRENDYmodels}
 \caption{TRENDY models included in this study and relevant features.}
-\begin{tabular}{lllll}
-\textbf{Model} & \textbf{Institution}                                                                               & \textbf{NEP} & \textbf{NBP} & \textbf{Reference}        \\ \hline
-CABLE-POP      & \begin{tabular}[c]{@{}l@{}}Western Sydney \\ University, \\CSIRO Environment, \\ Australia\end{tabular} & Yes          & Yes          & Haverd et al. (2018)      \\
-CLASSIC        & ECCC, Canada                                                                                       & Yes          & Yes          & Melton et al. (2020)      \\
-CLM5.0         & NCAR, USA                                                                                          & Yes          & Yes          & Lawrence et al. (2019)    \\
-DLEM           & Boston College, USA                                                                                & Yes          & No           & Tian, Chen, et al. (2015) \\
-ED             &                                                                                                    & Yes          & Yes          &                           \\
-ELM            &                                                                                                    & Yes          & Yes          &                           \\
-IBIS           & Uni SunYat-Sen, China                                                                              & Yes          & Yes          & Yuan et al. (2014)        \\
-iMAPLE           &                                                                              & Yes          & Yes          &         \\
-ISAM           & Uni Illinois, USA                                                                                  & Yes          & Yes          & Meiyappan et al. (2015)   \\
-ISBACTRIP      &                                                                                                    & Yes          & Yes          & Decharme et al. (2019)    \\
-JSBACH         & MPI-BGC, Germany                                                                                   & Yes          & Yes          & Reick et al. (2021)       \\
-JULES          & Uni Exeter, UK                                                                                     & Yes          & Yes          & Wiltshire et al., 2021    \\
-LPJml          & NASA, USA                                                                                          & Yes          & No           & Sitch et al., 2003        \\
-LPJwsl         & NASA, USA                                                                                          & Yes          & Yes          & Sitch et al., 2003        \\
-LPX            & UNIBE, Switzerland                                                                                 & Yes          & Yes          & Lienert and Joos (2018)   \\
-OCN            & MPI-BGC, Germany                                                                                   & Yes          & Yes          & Zaehle and Friend (2010)  \\
-ORCHIDEE       & LSCE, France                                                                                       & Yes          & Yes          & Vuichard et al. (2019)    \\
-SDGVM          & ORNL, USA                                                                                          & Yes          & Yes           & Walker et al. (2017)      \\
-VISIT          & IAE, Japan                                                                                         & Yes          & Yes          & Kato et al. (2013)        \\
-VISIT-UT           &                                                                                       & Yes          & Yes          &                           \\ \hline
+\begin{tabular}{llll}
+\textbf{Model} & \textbf{NEP} & \textbf{NBP} & \textbf{Reference}                                                                                                                  \\ \hline
+CABLE-POP      & Yes          & Yes          & Haverd et al. (2018)                                                                                                                \\
+CLASSIC        & Yes          & Yes          & Melton et al. (2020)                                                                                                                \\
+CLM5.0         & Yes          & Yes          & Lawrence et al. (2019)                                                                                                              \\
+DLEM           & Yes          & No           & Tian et al. (2015), You et al. (2022)                                                                                               \\
+ED             & Yes          & Yes          & Moorcroft et al. (2001), Ma et al. (2022)                                                                                           \\
+ELM            & Yes          & Yes          & Yang et al.(2023), Burrows et al. (2020)                                                                                            \\
+IBIS           & Yes          & Yes          & Xia et al. (2024)                                                                                                                   \\
+iMAPLE         & Yes          & Yes          & Yue et al. (2024)                                                                                                                   \\
+ISAM           & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Jain et al. (2013), Meiyappan et al. (2015), \\ Shu et al. (2020)\end{tabular}                           \\
+ISBACTRIP      & Yes          & Yes          & Delire et al. (2020)                                                                                                                \\
+JSBACH         & Yes          & Yes          & Mauritsen et al. (2019), Reick et al. (2021)                                                                                        \\
+JULES          & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Wiltshire et al. (2021), Sellar et al. (2019), \\ Burton et al. (2019)\end{tabular}                      \\
+LPJml          & Yes          & No           & \begin{tabular}[c]{@{}l@{}}Schaphoff et al. (2018), von Bloh et al. (2018),\\ Lutz et al. (2019), Heinke et al. (2023)\end{tabular} \\
+LPJwsl         & Yes          & Yes          & Poulter et al. (2011)                                                                                                               \\
+LPX            & Yes          & Yes          & Lienert and Joos (2018)                                                                                                             \\
+OCN            & Yes          & Yes          & Zaehle and Friend (2010), Zaehle et al. (2011)                                                                                      \\
+ORCHIDEE       & Yes          & Yes          & \begin{tabular}[c]{@{}l@{}}Krinner et al. (2005), Zaehle and Friend (2010), \\ Vuichard et al. (2019)\end{tabular}                  \\
+SDGVM          & Yes          & No           & Woodward and Lomas (2004), Walker et al. (2017)                                                                                     \\
+VISIT          & Yes          & Yes          & Ito and Inatomi (2012), Kato et al. (2013)                                                                                          \\
+VISIT-UT       & Yes          & Yes          &                                                                                                                                     \\ \hline
 \end{tabular}
 \end{table}
 
+\newpage
 \section*{Model weights}
 
-\begin{figure}
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=1.0\linewidth]{CMIP6_FLUXCOM_weights.pdf}
     \caption{Spatial weights of NEP CMIP6 models to calculate the ensemble model derived from FLUXCOM-X (NEE). Diverging color tables indicate whether the model contributes more or less than 1/8, where 8 is the number of models.}
     \label{fig:weights_CMIP6-FLUXCOMX}
 \end{figure}
 
-\begin{figure}
+\newpage
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=1.0\linewidth]{CMIP6_CarboScope_weights.pdf}
     \caption{Spatial weights of NBP CMIP6 models to calculate the ensemble model derived from CarboScope. Diverging color tables indicate whether the model contributes more or less than 1/8, where 8 is the number of models.}
     \label{fig:weights_CMIP6-CarboScope}
 \end{figure}
 
-\begin{figure}
+\newpage
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=1.0\linewidth]{TRENDY_FLUXCOM_weights.pdf}
     \caption{Spatial weights of NEP TRENDY models to calculate the ensemble model derived from FLUXCOM-X (NEE). Diverging color tables indicate whether the model contributes more or less than 1/20, where 20 is the number of models.}
     \label{fig:weights_TRENDY-FLUXCOMX}
 \end{figure}
 
-\begin{figure}
+\newpage
+\begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{TRENDY_CarboScope_weights.pdf}
     \caption{Spatial weights of NBP TRENDY models to calculate the ensemble model derived from CarboScope. Diverging color tables indicate whether the model contributes more or less than 1/18, where 18 is the number of models.}
     \label{fig:weights_TRENDY-CarboScope}
 \end{figure}
 
-
+\newpage
 \section*{Complementary figures}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=1.0\linewidth]{CMIP6_NBP_CS_map_latitude_mean.pdf}
     \caption{Carbon Sequestration (CS) spatial patterns from NBP from CMIP6 models (1850-2014). a) Global distributions of CS based on the weighted ensemble of 8 CMIP6 models, and b) latitudinal CS profiles for individual CMIP6 models (colored lines) and their ensemble (black line). The dotted line represents zero carbon sequestration and the shadow areas represent two standard deviations from the mean.}
@@ -153,28 +161,28 @@ VISIT-UT           &                                                            
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{Comparison_CS_latitude_NEP.pdf}
-    \caption{Latitudinal CS profiles obtained from NEP (or NEE) from a) CMIP6, b) TRENDY, and c) FLUXCOM-X. Colored lines in a) and b) represent each model; the black line is their ensemble. The dotted lines represent zero carbon sequestration and the shadow areas represent two standard deviations from the mean.}
+    \caption{Latitudinal CS profiles obtained from NEP (or NEE) from a) CMIP6, b) TRENDY, and c) FLUXCOM-X. Colored lines in a) and b) represent individual models; the black line is their ensemble. The dotted lines represent null carbon sequestration and the shadow areas two standard deviations from the mean.}
     \label{fig:LatCS_NEP}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{Comparison_CS_latitude_NBP.pdf}
-    \caption{Latitudinal CS profiles obtained from NBP from a) CMIP6, b) TRENDY, c) CarboScope, and d) CAMS. Colored lines in a) and b) represent each model; the black line is their ensemble. The dotted lines represent zero carbon sequestration and the shadow areas represent two standard deviations from the mean.}
+    \caption{Latitudinal CS profiles obtained from NBP from a) CMIP6, b) TRENDY, c) CarboScope, and d) CAMS. Colored lines in a) and b) represent individual models; the black line is their ensemble. The dotted lines represent null carbon sequestration and the shadow areas two standard deviations from the mean.}
     \label{fig:LatCS_NBP}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{Comparison_CS_temporal_NEP.pdf}
-    \caption{Time accumulation of Carbon Sequestration (CS) (left panel) and CS at the end of the period from 1850 to 2014 (right panel) calculated using NBP for a) global, b) tropics, c) mid-latitudes, and d) high-latitudes zones calculated using the results of 8 models from CMIP6. Black lines and bars indicate the results using the ensemble of the models. The dotted lines indicate null values of CS.}
+    \caption{Time accumulation of Carbon Sequestration (CS) of CMIP6 (1st vertical panel), TRENDY (2nd vertical panel), and FLUXCOM-X (3rd vertical panel), and CS at the end of the period from 2001 to 2014 (right panel) calculated using NEP (or NEE) for global (1st horizontal panel), tropics (2nd horizontal panel), mid-latitudes (3rd horizontal panel), and high-latitudes zones (4th horizontal panel). Black lines in 1st and 2nd horizontal panels indicate the results using the ensemble of the models and bars for CMIP6 and TRENDY in the right panel correspond to their ensembles. The dotted lines indicate null values of CS.}
     \label{fig:TempCS_NEP}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{Comparison_CS_temporal_NBP.pdf}
-    \caption{Caption}
+    \caption{Time accumulation of Carbon Sequestration (CS) of CMIP6 (1st vertical panel), TRENDY (2nd vertical panel), CarboScope (3rd vertical panel) and CAMS (4th vertical panel), and CS at the end of the period from 2001 to 2014 (right panel) calculated using NBP for global(1st horizontal panel), tropics (2nd horizontal panel), mid-latitudes (3rd horizontal panel), and high-latitudes zones (4th horizontal panel). Black lines in 1st and 2nd panels indicate the results using the ensemble of the models and bars for CMIP6 and TRENDY in the right panel correspond to their ensembles. The dotted lines indicate null values of CS.}
     \label{fig:TempCS_NBP}
 \end{figure}
 
