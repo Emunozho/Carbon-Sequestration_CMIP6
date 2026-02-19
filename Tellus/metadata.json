@@ -1,0 +1,463 @@
+[
+  {
+    "id": "-GfziK-sJ9i1xo3QcI20x",
+    "name": "README.md",
+    "path": "/arxiv-style-master/README.md",
+    "type": "file",
+    "lastModified": 1771236242813,
+    "size": 3075,
+    "mimeType": "text/markdown",
+    "isBinary": false
+  },
+  {
+    "id": "1rurJpZKDp-_Zhu8ULKdZ",
+    "name": "TRENDY_CarboScope_weights.pdf",
+    "path": "/Images/TRENDY_CarboScope_weights.pdf",
+    "type": "file",
+    "lastModified": 1771244324746,
+    "size": 5863429,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "20CLj6O79AlmH2hg3E14F",
+    "name": "Comparison_CS_maps_NBP.pdf",
+    "path": "/Images/Comparison_CS_maps_NBP.pdf",
+    "type": "file",
+    "lastModified": 1771243063904,
+    "size": 1480897,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "6CLcNCSbd3TwdES9ss7Yo",
+    "name": "Society_Logo_FPO.pdf",
+    "path": "/Styles/Society_Logo_FPO.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 13724,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "8PBBWay_XgtH019ig6hm2",
+    "name": "up_logo.pdf",
+    "path": "/Styles/up_logo.pdf",
+    "type": "file",
+    "lastModified": 1771236282768,
+    "size": 312405,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "8x6d-Xz6zoY0W2U93s6pO",
+    "name": "DT-Query.sty",
+    "path": "/Styles/DT-Query.sty",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 12704,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "95zRFcL9AAOHBbXkoBg39",
+    "name": "aastex.sty",
+    "path": "/Styles/aastex.sty",
+    "type": "file",
+    "lastModified": 1771236282766,
+    "size": 5889,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "9dkLWvThYqUibPKr2_hWQ",
+    "name": "amsthm.sty",
+    "path": "/Styles/amsthm.sty",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 12581,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "ASnfiVGj1YgqYf2jlPzZH",
+    "name": "Comparison_CS_maps_NEP.pdf",
+    "path": "/Images/Comparison_CS_maps_NEP.pdf",
+    "type": "file",
+    "lastModified": 1771243063905,
+    "size": 2714812,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "BvghAaRj0oWOlgkHfV2Qp",
+    "name": "template.pdf",
+    "path": "/arxiv-style-master/template.pdf",
+    "type": "file",
+    "lastModified": 1771236242818,
+    "size": 203408,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "D_WLKRznpld4bpOgBfyZS",
+    "name": "Sample.pdf",
+    "path": "/Sample.pdf",
+    "type": "file",
+    "lastModified": 1771236282768,
+    "size": 1261042,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "DnRMd2HcuKTnWnhE7LgSg",
+    "name": "arxiv-style-master",
+    "path": "/arxiv-style-master",
+    "type": "directory",
+    "lastModified": 1771236242805
+  },
+  {
+    "id": "FgXMkLcOZuCJ8jWgT40ol",
+    "name": "Jnls-Template-V3.cls",
+    "path": "/Styles/Jnls-Template-V3.cls",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 185697,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "G0mVcFRZiFosFjDZWqMc8",
+    "name": "CMIP6_CarboScope_weights.pdf",
+    "path": "/Images/CMIP6_CarboScope_weights.pdf",
+    "type": "file",
+    "lastModified": 1771242728177,
+    "size": 2124170,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "IKVeFuYDPb_iB7RSR30b8",
+    "name": "Allproducts_variables.pdf",
+    "path": "/Images/Allproducts_variables.pdf",
+    "type": "file",
+    "lastModified": 1771242497317,
+    "size": 23361,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "MiOaWBlARJUXAql0Dg39l",
+    "name": "DT-stix.sty",
+    "path": "/Styles/DT-stix.sty",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 134984,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "NB0bOLprzNgkvmTh_Z-fk",
+    "name": "NBP_CMIP6_TRENDY_CS_time_final_res.pdf",
+    "path": "/Images/NBP_CMIP6_TRENDY_CS_time_final_res.pdf",
+    "type": "file",
+    "lastModified": 1771236282768,
+    "size": 217135,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "OJltIOpyRF3mzRdGMbSi1",
+    "name": "CMIP6_TRENDY_comparison_CS_Mt.pdf",
+    "path": "/Images/CMIP6_TRENDY_comparison_CS_Mt.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 48018,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "OgAWdBX8IdkA_TIFc9tSg",
+    "name": "CMIP6_variables.pdf",
+    "path": "/Images/CMIP6_variables.pdf",
+    "type": "file",
+    "lastModified": 1771242264939,
+    "size": 208164,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "Q1kLH1081d4OhPFqB6SnE",
+    "name": "template.tex",
+    "path": "/arxiv-style-master/template.tex",
+    "type": "file",
+    "lastModified": 1771236242805,
+    "size": 6874,
+    "mimeType": "application/x-tex",
+    "isBinary": false
+  },
+  {
+    "id": "T32jXaovdc3zl4ug4znd3",
+    "name": "Publisher_Logo_FPO.pdf",
+    "path": "/Styles/Publisher_Logo_FPO.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 13722,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "W142We98gO5-wg0nq2A6n",
+    "name": "orchidlogo.pdf",
+    "path": "/Styles/orchidlogo.pdf",
+    "type": "file",
+    "lastModified": 1771236282768,
+    "size": 46469,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "XNU1_SxoECMjc7F95GCD4",
+    "name": "CAMS_CARBOSCOPE_NBP_CS_time_final_res.pdf",
+    "path": "/Images/CAMS_CARBOSCOPE_NBP_CS_time_final_res.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 31069,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "XiTdzsEshv5MWSdT96LTJ",
+    "name": "Images",
+    "path": "/Images",
+    "type": "directory",
+    "lastModified": 1771236282766
+  },
+  {
+    "id": "Z2v7k_LpwN83DqoQpx76u",
+    "name": "Sample.tex",
+    "path": "/Sample.tex",
+    "type": "file",
+    "lastModified": 1771246906649,
+    "size": 70385,
+    "mimeType": "application/x-tex",
+    "isBinary": false
+  },
+  {
+    "id": "ZvQPWipoBVT7y9JNCQN4u",
+    "name": "License.txt",
+    "path": "/arxiv-style-master/License.txt",
+    "type": "file",
+    "lastModified": 1771236242813,
+    "size": 1068,
+    "mimeType": "text/plain",
+    "isBinary": false
+  },
+  {
+    "id": "bDAvvvGG_461mGV_eO7_C",
+    "name": "NEP_CMIP6_TRENDY_CS_time_final_res.pdf",
+    "path": "/Images/NEP_CMIP6_TRENDY_CS_time_final_res.pdf",
+    "type": "file",
+    "lastModified": 1771236282768,
+    "size": 216250,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "bUbUrHp2GL164ia3Us-Tf",
+    "name": "Open_Access_logo_white.pdf",
+    "path": "/Styles/Open_Access_logo_white.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 51048,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "bYHYIJZ0kW8-sVUSEMorc",
+    "name": "Comparison_CS_latitude_NEP.pdf",
+    "path": "/Images/Comparison_CS_latitude_NEP.pdf",
+    "type": "file",
+    "lastModified": 1771243063904,
+    "size": 104663,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "c2-toLsMxgE4gCTZlQTrq",
+    "name": "Comparison_NEPvsNBP_res.pdf",
+    "path": "/Images/Comparison_NEPvsNBP_res.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 17997,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "d8VjVoS5HS8EINLgNDhCt",
+    "name": "Styles",
+    "path": "/Styles",
+    "type": "directory",
+    "lastModified": 1771236282766
+  },
+  {
+    "id": "dapy5RmAmY5rd6-hOe2Uy",
+    "name": "data_products_CS_map_latitude_2001-2020.pdf",
+    "path": "/Images/data_products_CS_map_latitude_2001-2020.pdf",
+    "type": "file",
+    "lastModified": 1771236282768,
+    "size": 3748505,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "edQDwh1kN2-NbuN0EDnSn",
+    "name": "TRENDY_NEP_NBP_CS_map_latitude_mean.pdf",
+    "path": "/Images/TRENDY_NEP_NBP_CS_map_latitude_mean.pdf",
+    "type": "file",
+    "lastModified": 1771252954961,
+    "size": 2533852,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "fkmkTljr4H5Z5EZptiG5r",
+    "name": "data_products_comparison_CS_Mt_trop.pdf",
+    "path": "/Images/data_products_comparison_CS_Mt_trop.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 20954,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "iF-PbONK0vWjMIV05BPr3",
+    "name": "Supplementary_material.tex",
+    "path": "/Supplementary_material.tex",
+    "type": "file",
+    "lastModified": 1771253019253,
+    "size": 22943,
+    "mimeType": "application/x-tex",
+    "isBinary": false
+  },
+  {
+    "id": "kXBoVNyVTPBLTzrDyoDR6",
+    "name": "TRENDY_FLUXCOM_weights.pdf",
+    "path": "/Images/TRENDY_FLUXCOM_weights.pdf",
+    "type": "file",
+    "lastModified": 1771244315458,
+    "size": 7352329,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "nb1Y8ShvyfZr6P_5kHGuR",
+    "name": "apa.bst",
+    "path": "/apa.bst",
+    "type": "file",
+    "lastModified": 1771236282766,
+    "size": 23582,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "p8gdnH1QARCk-KLnK5P_p",
+    "name": "arxiv.sty",
+    "path": "/arxiv-style-master/arxiv.sty",
+    "type": "file",
+    "lastModified": 1771236242806,
+    "size": 7642,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "pln_gEuw14IB2R8myM5Xp",
+    "name": "Open_Access_logo_rgb.pdf",
+    "path": "/Styles/Open_Access_logo_rgb.pdf",
+    "type": "file",
+    "lastModified": 1771236282768,
+    "size": 49353,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "r8tGjSkP5QCrlBS0PL3zI",
+    "name": ".gitignore",
+    "path": "/arxiv-style-master/.gitignore",
+    "type": "file",
+    "lastModified": 1771236242806,
+    "size": 2359,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "rU4LbBRw1oIfjjfZyKAMp",
+    "name": "Comparison_CS_latitude_NBP.pdf",
+    "path": "/Images/Comparison_CS_latitude_NBP.pdf",
+    "type": "file",
+    "lastModified": 1771243063904,
+    "size": 106078,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "vXJ9Yu1iUHCVS-F14tTNQ",
+    "name": "biblio.bib",
+    "path": "/biblio.bib",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 93957,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "y61aiKuFHV7VelJa5wYWf",
+    "name": "orcid.pdf",
+    "path": "/arxiv-style-master/orcid.pdf",
+    "type": "file",
+    "lastModified": 1771236242813,
+    "size": 12397,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "zSJgqqSHQOwfe8yXp27QC",
+    "name": "CMIP6_NEP_NBP_CS_map_latitude_mean.pdf",
+    "path": "/Images/CMIP6_NEP_NBP_CS_map_latitude_mean.pdf",
+    "type": "file",
+    "lastModified": 1771252952933,
+    "size": 2414305,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "zV1AyLRLYG0j0C4LDnaf0",
+    "name": "CMIP6_FLUXCOM_weights.pdf",
+    "path": "/Images/CMIP6_FLUXCOM_weights.pdf",
+    "type": "file",
+    "lastModified": 1771242731947,
+    "size": 2747023,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  },
+  {
+    "id": "zm4T4q0h1L5b0oA9jZDtL",
+    "name": "references.bib",
+    "path": "/arxiv-style-master/references.bib",
+    "type": "file",
+    "lastModified": 1771236242813,
+    "size": 1034,
+    "mimeType": "application/octet-stream",
+    "isBinary": false
+  },
+  {
+    "id": "ztaOL3-GTNjnZBHD4s95j",
+    "name": "X-BASE_NEE_CS_time_final_res.pdf",
+    "path": "/Images/X-BASE_NEE_CS_time_final_res.pdf",
+    "type": "file",
+    "lastModified": 1771236282767,
+    "size": 21980,
+    "mimeType": "application/pdf",
+    "isBinary": true
+  }
+]
