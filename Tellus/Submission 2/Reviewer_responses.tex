@@ -1,0 +1,292 @@
+% Template for replying to reviewer comments
+%
+% Author: Gertjan van den Burg (https://gertjan.dev)
+% Source: https://github.com/GjjvdBurg/LaTeXReviewReplyTemplate
+% License: MIT
+% 
+% Command usage:
+%
+%  - Reply: complete answer to the point raised.
+%
+%  - Partial reply: partial answer to the point raised. More text may be 
+%    needed. Can also imply work on the paper that still has to be done.
+%
+%  - Todo reply: Used for discussion and/or sketching a reply.
+%
+%  - Need reply: Signals that a point needs to get a reply.
+%
+\documentclass[authoryear,11pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage[most]{tcolorbox}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{natbib}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    pdfauthor=author,
+    }
+\urlstyle{same}
+
+
+% Colors
+\definecolor{lightgray}{rgb}{0.9, 0.9, 0.9}
+\definecolor{lightyellow}{rgb}{0.98,0.91,0.71}
+\definecolor{lightred}{rgb}{0.8,0.4,0.4}
+
+% Boxes
+\newtcolorbox{replybox}{colback=lightgray, grow to right by=-5mm, grow to 
+	left by=-5mm, boxrule=0pt, boxsep=0pt, breakable, before skip=10pt}
+\newtcolorbox{partialbox}{colback=lightyellow, grow to right by=-5mm, grow to 
+	left by=-5mm, boxrule=0pt, boxsep=0pt, breakable, before skip=10pt}
+\newtcolorbox{todobox}{colback=lightred, grow to right by=-5mm, grow to left 
+	by=-5mm, boxrule=0pt, boxsep=0pt, breakable, before skip=10pt}
+
+% Counters
+
+\newcounter{epntcnt}
+\newcounter{rpntcnt}
+\newcounter{revcnt}
+
+
+% Environments
+\newenvironment{reviewer}{%
+	\refstepcounter{revcnt}%
+	\setcounter{rpntcnt}{0}%
+	\section*{Reviewer \therevcnt}%
+}{}
+% Editor environment takes an optional argument
+\newenvironment{editor}[1][Editor]{%
+	\setcounter{epntcnt}{0}%
+	\section*{#1}%
+}{}
+
+% Reply Commands
+\newcommand{\reply}[1]{%
+	\begin{replybox}%
+		#1
+	\end{replybox}%
+}
+\newcommand{\partialreply}[1]{%
+	\begin{partialbox}%
+		Partial reply: \emph{#1}
+	\end{partialbox}%
+}
+\newcommand{\todoreply}[1]{%
+	\begin{todobox}%
+		Todo reply: \emph{#1}
+	\end{todobox}%
+}
+\newcommand{\needsreply}{%
+	\todoreply{This comment needs a reply.}%
+}
+
+% Point command differs depending on the environment
+\makeatletter
+\newcommand{\point}{%
+	\medskip\noindent%
+	\def\@tmp{editor}%
+	\ifx\@tmp\@currenvir \refstepcounter{epntcnt}\theepntcnt\textbf{.}  
+	\else%
+	\def\@tmp{reviewer}%
+	\ifx\@tmp\@currenvir \refstepcounter{rpntcnt}\therpntcnt\textbf{.}  
+	\else\fi\fi%
+}
+\makeatother
+
+% Renew the commands for the point counters to get the formatting we want in 
+% both the references and the item labels.
+% \renewcommand{\therpntcnt}{\textbf{\textup{\therevcnt.\arabic{rpntcnt}}}}
+% \renewcommand{\theepntcnt}{\textbf{\textup{E.\arabic{epntcnt}}}}
+
+\renewcommand{\therpntcnt}{\textbf{\textup{\arabic{rpntcnt}}}}
+\renewcommand{\theepntcnt}{\textbf{\textup{\arabic{epntcnt}}}}
+
+
+\setlength\parindent{0pt}
+\newcommand{\bft}[1]{\mathbf{#1}}
+
+\title{Reply to Reviewer Comments}
+\author{Estefanía Muñoz, Ingrid Chanca, and Carlos A. Sierra}
+
+\begin{document}
+\today.
+\vspace{40pt}
+
+\textbf{Dear Tellus Editorial Office:}
+\vspace{15pt}
+
+ 
+We would like to thank you for the opportunity to submit a revised version of our manuscript. We have carefully addressed and implemented all the suggestions provided by the reviewer and the Editor. The most significant modifications are:
+
+\begin{itemize}
+\item [-] \textbf{Clearer objectives:} We have explicitly stated the aim and scope of the manuscript within the introduction.
+\item [-] \textbf{Improved visualizations:} We updated the color scale and consolidated Figures 1--3 in two figures, separating NEP and NBP results.
+\item [-] \textbf{Methodological details:} We provided further details on the methodology used to calculate the multimodel ensembles, including its limitations. Additionally, we claridied the limitations of the different products used and specidied which disturbances they account for.
+\item [-] \textbf{Restructured results:} We reorganized the presentation of the results, displaying the NEP findings firs, followed by the NBP results. 
+\item [-] \textbf{Expanded discussion:} We updated the discussion subsection regarding discrepancies among products and models to include a comprehensive overview of the study's limitations.
+\end{itemize}
+
+These changes were based on the comments from the reviewer. Please, see below a point-by-point response to reviewer' comments and changes made as a consequence of these suggestions.
+
+\vspace{30pt}
+Sincerely,
+
+\vspace{20pt}
+The authors of ``Temporal integration of terrestrial net carbon fluxes reveals multi-decadal carbon debts due to previous carbon legacies".
+
+\clearpage
+
+\begin{editor}
+    \point The Reviewer has provided a number of constructive comments that should be carefully addressed, and I encourage the authors to incorporate their suggestions in a revised manuscript. Personally, I found it somewhat difficult to identify the methodological novelty of the present study with respect to the authors’ previous work. In particular, it is not entirely clear in the current version how the definition of the CS metric differs from that presented in Sierra et al. (2025) and Metzler et al. (2018), or whether the present manuscript primarily applies a methodology developed in those studies to a new set of datasets and analyses. This is closely related to Reviewer comment n. 3: at present, the Introduction places considerable emphasis on the methodology but provides less details on the specific scientific motivation and the novel contribution of the present study. A more explicit statement of what is methodologically new, and what is new in terms of application and scientific insight, would further strengthen the manuscript.
+        \reply{We sincerely appreciate this critical guidance. Rather than redefining the underlying mathematical formulation of the Carbon Sequestration (CS) metric—which was structurally established by Metzler et al. (2018) and Sierra (2025)—the primary novelty of this study lies in its scientific application, scale of synthesis, and the core insights derived from evaluating the effects of historical disturbances on global carbon dynamics. As detailed in our response to Reviewer Comment 4, this work provides the first comprehensive integration of data-driven products (X-BASE), top-down atmospheric inversions (CarboScope, CAMS), and bottom-up process models (CMIP6, TRENDY) to address the long-term mathematical tradeoffs between carbon inputs (assimilation) and output lag times (transit times). To address the concerns of both the Editor and the Reviewer, we have thoroughly revised the Introduction. Specifically, we reduced the technical overemphasis on the CS definition and expanded the discussion regarding the scientific motivation, scope, and original insights of this study. We now explicitly state how our work addresses the question of whether high global tropical inputs or slow high-latitude turnover rates dominate long-term net carbon retention.}
+
+
+    \point A second suggestion concerns the presentation of the multi-model ensemble results. Throughout the manuscript, the emphasis is placed on ensemble means, while the temporal evolution of the ensemble spread is largely absent from the main text. This tends to underrepresent both the robustness of the multi-model analysis and the potential uncertainty. For example, in Fig. 5, some models appear to exhibit divergent behavior, yet this variability is not evident in the time series showing only the ensemble mean. Including an indication of ensemble spread (e.g., shaded envelopes, quantiles, or a selection of individual trajectories) in the main figures would provide readers with a more complete picture of the consistency of the temporal trends across models.
+        \reply{We agree with the Editor that incorporating the uncertainty and variability of the multi-model ensemble spread provides a much more complete and transparent picture of the consistency across products. We would like to clarify that we already plotted the uncertainty in the plots it is possible and to explain the constraints that does not allow to plot it in the other figures.
+
+        \begin{itemize}
+            \item \textbf{Spatial variability and individual models:} In Figs.~1b, 2b, S8b,d, and S9b,d, we plot the uncertainty envelopes (shaded areas) associated with the spatial means. Furthermore, to address the concern regarding model divergence, Figs.~3b,d, 4b,d, S8b,d, and S9b,d show the quantification of CS for every individual model within the CMIP6 and TRENDY multi-model products.
+            \item \textbf{Deterministic nature of observation-based products:} For the CS calculations derived from top-down and data-driven products (CarboScope, CAMS, and X-BASE; Figs~1c and 2c), constructing a standard error envelope is not feasible due to the nature of these datasets. Unlike multi-model ensembles, these products provide a single, deterministic value for each spatio-temporal grid point. Because the CS metric is computed by accumulating these unique values across both space and time, there is no internal variance or ensemble spread from which a statistical error or uncertainty envelope can be calculated.
+            \item \textbf{Multi-product comparison:} In Figure 5, we directly compare the observation-based products against the weighted ensembles of CMIP6 and TRENDY. Because these weighted ensembles represent a singular consensus curve rather than a simple arithmetic average, displaying a raw model spread envelope for them while leaving the deterministic observation-based products without one would create a visually inconsistent graphic. To clarify this for the reader, we have added a statement in the figure caption explaining this methodological distinction.
+        \end{itemize}
+}
+\end{editor}
+
+\begin{reviewer}
+
+    \subsection*{General comments}
+
+    \point Overall, I found the manuscript to be a novel, interesting, and generally well-written contribution that fits well within the scope of the journal. The idea of evaluating carbon sequestration through the historical context of land carbon dynamics is scientifically valuable, and the focus on legacy effects, disturbance, and long-term carbon balance is also relevant for ongoing discussions about climate mitigation and land-based carbon policy. I provide the following general and specific comments for the consideration of the authors and editor.
+        \reply{We sincerly thank the reviewer for their time and effort in reviewing our manuscript in such detail and for their valuable suggestions, which have considerably helped us to improve the quality of the manuscript.}
+
+
+    \point Figures 1-3: The contrast between CS calculated from NEP and CS calculated from NBP is one of the central messages of the paper, but the current figure organization makes this contrast harder to see. Figures 2 and 3 appear to be separated because of the large difference in magnitude between NEP- and NBP-based CS. A similar issue affects Figure 1: the shared scaling makes the spatial patterns and discrepancies in the NBP panels harder to interpret, especially potentially interesting regional differences between CAMS and CarboScope, such as in South Asia and southwestern South America. I wonder whether Figures 1-3 could be redesigned to communicate more directly that CS based on NEP is very different from CS based on NBP, for example by combining some figures so that there are only two main figures, or by separating Figure 1 into two figures with more appropriate scaling.
+       \reply{We agree with the reviewer that the contrast between NEP- and NBP-based CS is a central message of our study and that the previous figure layout did not fully optimize this comparison. Following your their suggestion, we have redesigned the figures and consolidated the results into two main figures to enhance clarity and allow for independent scaling. 
+       Specifically, we have:
+       \begin{itemize}
+        \item Merged all results pertaining to NEP into a single figure (incorporating the previous Figs.~1a,b and Fig.~2).
+        \item Merged all results pertaining to NBP into a separate figure (incorporating the previous Figs.~1c--f and Fig.~3).
+    \end{itemize}}
+
+    \point The weighted ensemble approach raises two related issues. First, the procedure itself is not explained in enough detail; the authors could describe more clearly how weights are calculated and what benchmark periods and variables are used. Second, the implications of using data-driven products as benchmarks should be addressed more directly. For example, X-BASE is an upscaled data-driven product rather than a direct observation of global NEP, and its reference paper notes limitations including low interannual variability and under-constrained tropical regions. These limitations matter because they may influence how model performance and spatial patterns are interpreted in the weighted ensemble.
+        \reply{We agree that clarity regarding the methodology and benchmark limitations is essential. Accordingly, we have expanded Subsection 2.2 to include the mathematical equations, benchmark details, advantages, and limitations of the weighted ensemble approach. Additionally, Subsection 2.1 now explicitly addresses the limitations of each product, including the low interannual variability of X-BASE and data scarcity in the Global South. Finally, we expanded the Discussion to address how these limitations might propagate into the ensemble and influence the spatial patterns.}
+
+    \point The manuscript could clarify more explicitly what is new in the present study relative to previous work on carbon storage or temporary carbon storage, particularly the work by Sierra et al. At times, the paper reads both as an introduction of the CS metric and as an application of an already established metric to global carbon-cycle products. It would help to distinguish the methodological contribution from the empirical contribution: for example, whether the novelty lies in the metric itself, its global spatial application, the comparison across multiple products, the NEP/NBP contrast, or the interpretation of long-term historical carbon debt.
+        \reply{We have revised the Introduction to explicitly state our main research questions, objectives, and scope, clearly separating our methodological and empirical contributions:
+        \begin{itemize}
+            \item \textbf{Methodological novelty:} While previous work by Sierra et al. and Metzler et al. defined the CS metric and applied it locally using models of carbon transit time distributions, here, we calculated CS directly from numerical modeled outputs and observed global fluxes and stocks.
+            \item \textbf{Empirical novelty:} This is the first study to apply the CS metric globally and using multidecadal data products to track historical carbon trajectories. 
+            \item \textbf{Key contrasts:} The core empirical novelty lies in contrasting NEP versus NBP (accounting for disturbances like fires and land-use change) to quantify long-term carbon debts. Additionally, we show that while product choices affect absolute CS values, regional-scale dynamics remain remarkably robust across diverse observation-driven and process-based models.
+        \end{itemize}}
+
+    \point Some of the mechanistic interpretation could be better supported by the results. In particular, the manuscript argues that tropical CS patterns are associated with high assimilation, whereas high-latitude patterns reflect low respiration. This interpretation is plausible, and I understand that it is anchored in general observations of high GPP and high ecosystem respiration in the tropics, and low GPP and low ecosystem respiration at high latitudes. However, this is not shown directly in the Results. The Results mostly show CS, which is a net-balance metric, rather than directly showing how GPP and respiration contribute to the observed spatial patterns. If this interpretation is central to the discussion, the authors could show, either in the Results or Supplementary Material, how GPP and respiration help explain the spatial distribution of CS.
+        \reply{These mechanisitic dynamics are indeed supported by Figures S1 and S2 in the Supplementary Material. These figures present the temporal evolution of GPP and respiration, averaged globally as well as regionally across tropical, mid-latitude, and high-latitude zones for both CMIP6 and TRENDY models. They confirm that the absolute magnitudes of GPP and respiration are substantially higher in the tropics than in mid- and high latitudes, supporting our interpretation. Please note that these specific gross flux breakdowns cannot be provided for the observation-driven products, as they do not isolate these separate variables. To ensure this is clear to the reader, we have updated the text in both the Results and Discussion sections to explicitly guide the reader to these supplementary figures when discussing the spatial CS patterns.}
+
+
+    \point Because CS is calculated as a double integral of net carbon flux, the choice of start year and integration window can strongly influence both its sign and magnitude. This is particularly important for claims about "pre-industrial carbon debt" or "repaying" carbon debt, which depend on the 1850 baseline used in the long-term analysis. A sensitivity analysis using alternative start years, or at least a more explicit discussion of baseline and time-window dependence, would make these interpretations more robust.
+        \reply{We completely agree with the reviewer that the sign and magnitude of CS are highly dependent on the choice of the baseline year and the integration window. This crucial point was addressed in our original Discussion when comparing observation-based products (which start in 2001) against ESMs and DGVMs (which start in 1850). For instance, NBP-based CS values are predominantly negative when integrating from 1850 because they capture better longer-term historical legacy effects, whereas they appear mostly positive when integrating only from 2001 due to recent ecosystem restoration and land abandonment, particularly in Europe. Following the reviewer's suggestion to make these interpretations more robust, we have performed a sensitivity analysis. Specifically, we conducted a rolling-window calculation of CS across different time horizons—namely 20, 50, 100, and 150 years—broken down by latitudinal regions for both the CMIP6 and TRENDY ensembles (now included as Figure S13 in the Supplementary Material). The results of this analysis show that:
+        \begin{itemize}
+            \item \textbf{For NEP-based CS:} As the integration window increases, the mean CS value increases, while the standard deviation across products decreases.
+            \item \textbf{For NBP-based CS:} The sign of the mean CS can change when comparing short (20-years) and long (100-years) temporal windows. In general, wider integration windows lead to deeper negative values in regions that exhibit carbon debts at shorter timescales, and higher positive values in areas with surpluses at shorter timescales, while the overall standard deviation decreases.
+        \end{itemize}
+        We have integrated these new findings into the revised manuscript to explicitly address the baseline and time-window dependence of our metrics.}
+
+
+    \point The contrast between NEP-based and NBP-based CS is central and useful, but the manuscript sometimes interprets this contrast too directly as the effect of disturbances. This interpretation requires caution because NEP/NEE and NBP definitions, as well as the treatment of disturbance-related fluxes such as fire, harvest, and land-use change, differ among X-BASE, CarboScope, CAMS, CMIP6, and TRENDY products. A clearer description of what disturbance fluxes are included in each product would also help clarify what the manuscript means by "carbon debt": is carbon debt simply negative CS at a given point in time, or specifically the negative component of CS driven by identifiable disturbances of anthropogenic origin?
+        \reply{We have added a description of the specific disturbance fluxes included in each product at the end of Section 2. Regarding the definition of ``carbon debt'' within our framework it represents a negative CS value at a given point in time. Our current analysis cannot separate the specific disturbance that causes CS to become negative. Most products used here either simulate or are driven by several disturbance types simultaneously, and isolating their individual effects is beyond the scope of this work. However, we agree that this would be a valuable direction for future research.}
+
+    \point The manuscript appears to assume that differences between X-BASE and the inversion products mainly reflect disturbance effects, but is this necessarily correct? X-BASE may carry some legacy information, for example through land-cover reconfiguration, and differences between X-BASE, CarboScope, and CAMS may also arise from methodological differences between data-driven upscaling and atmospheric inversions. The authors could discuss more clearly how much of the product contrast can be attributed to disturbance effects versus differences in product construction and constraints.
+        \reply{We completely agree with the reviewer that the observed differences can also be attributed to the different assumptions and methodologies used in each product. We have expanded the discussion in Subsection 4.3 to address this point more explicitly.}
+
+    \point The Results section could be organized more directly around the paper's main comparisons. The central story appears to be the contrast between NEP-based and NBP-based CS, evaluated over short observational periods and longer model-based historical periods. However, the current subsection structure separates these elements in a way that makes the argument harder to follow, particularly in Section 3.1 where spatial patterns are discussed mainly using NEP-based X-BASE estimates. A clearer organization around NEP versus NBP and short-term versus long-term dynamics would make the results easier to interpret.
+        \reply{We thank the reviewer for this suggestion and have reorganized the presentation of the results, presenting the NEP-based findings firs, followed by the NBP-based results.}
+    
+    \subsection*{Specific comments}
+
+    \point Line 1: Because the paper itself argues about what true carbon storage means, I would avoid using "store" in the opening sentence without qualification. A wording such as "take up" or "temporarily retain" may be more appropriate. Also, combustion of fossil fuels is already anthropogenic, so it should be clarified whether the authors refer to total anthropogenic carbon emissions or specifically to carbon emissions from fossil-fuel combustion.
+        \reply{We have removed the word ``store” from this sentence. We believe the sentence on anthropogenic carbon emissions already aligns with the reviewer’s point, as it specifies that these anthropogenic emissions result from the combustion of fossil fuels rather than treating them as separate phenomena.}
+    
+    \point Line 17: The example of the terrestrial biosphere switching from a sink to a source of bomb radiocarbon is not clearly connected to the argument about the net land carbon sink. Radiocarbon provides evidence about carbon turnover and temporary storage, but this is not the same as the terrestrial biosphere becoming a net source of total carbon. This example should be explained more clearly.
+        \reply{The reviewer is correct that the biosphere’s switch from a sink to a source of bomb radiocarbon is not equivalent to the terrestrial biosphere becoming a net source of total carbon. Our intention was to use the bomb‑$^{14}$C example as evidence about carbon turnover and transit times, not about the sign of the net land carbon sink. Bomb $^{14}$C constrains how long carbon resides in the biosphere and how quickly it is cycled, but it does not by itself determine whether the land is a net sink or source of carbon. To avoid confusion, we have revised the text to clarify that the bomb‑radiocarbon example is used to illustrate decadal turnover and transit times, not to argue that the terrestrial biosphere has become a net source of total carbon.}
+
+    \point Line 31: C is not defined properly at first mention.
+        \reply{This sentence has been revised, and the symbol ``C” no longer appears.}
+
+    \point Line 47: Would it be possible to replace "instantaneous sources and sinks" with a more straightforward term such as "net flux" or "net carbon exchange"? This would make the computation easier to understand for readers.
+        \reply{We have replaced the expression as suggested by the reviewer.}
+
+    \point Line 72: The sentence "Positive CS values should be interpreted as the amount of carbon retained over time in the terrestrial biosphere rather than released into the atmosphere" could be clearer. Because the double integral leads to a non-intuitive unit (PgC yr), saying "amount of carbon retained over time" may make CS sound like a typical carbon mass accumulated over the evaluated time span, rather than a mass-time quantity.
+        \reply{We agree that the original wording could be misread as implying that CS is a simple accumulated carbon mass (PgC), whereas it is in fact a mass-time quantity (PgC~yr) resulting from the double time integral of net carbon exchange or a single integral of carbon stocks. Our intention was to emphasize that positive CS values indicate that, over the evaluated period, more carbon has been kept out of the atmosphere than has been released. The sentence has been revised as follows:     
+
+        \textit{Positive CS values should be interpreted as a situation in which the cumulative amount of carbon retained by the terrestrial biosphere exceeds the cumulative amount released over the evaluation period. Negative CS values indicate the opposite—more carbon has been released than retained during the period—signifying a carbon debt relative to previous storage levels and reflecting accumulated losses over time.}}
+
+    \point Lines 92-124: Some of the dataset-specific details in these paragraphs could be left for the Methods section. The Introduction could use this space to motivate the approach more clearly at a higher abstraction level: inversion and data-driven products are used to assess recent carbon dynamics, while model ensembles are used to examine longer-term historical dynamics. It would also help to state the main questions more explicitly and connect them to the structure of the results, such as spatial patterns, short-term dynamics, long-term dynamics, and the contrast between NEP- and NBP-based estimates.
+        \reply{We agree with the reviewer and have merged the mentioned paragraph with the information provided in the Methods section, using this space in the Introduction to more clearly state the aim of this work. }
+
+    \point Line 125: This sentence is somewhat repetitive with the final paragraphs of the Introduction. If the Introduction is revised to move some dataset-specific details into the Methods, then this issue may be resolved naturally.
+        \reply{We rewrote the first subsection of the Methods, merging the previous information with the material removed from the Introduction. Consequently, this sentence no longer appears in the manuscript.}
+
+    \point Line 173: The phrase "actual historical climate conditions" may be too strong. Since TRENDY models are forced by observation-based or reconstructed climate and land-use datasets, a wording such as "reconstructed historical climate conditions" would be more precise.
+        \reply{We have modified the phrase to ``reconstructed historical climate conditions'' as suggested.}
+
+    \point Lines 198-217: Given the centrality of this procedure to the analysis, the model-weighting approach is rather under-explained in the Methods section. The authors should provide enough information for readers to understand how weights were calculated, over what period, against which variables, etc.
+        \reply{As noted in our response to Comment 3, we have expanded Subsection 2.2 to provide a comprehensive explanation of the weighted ensemble approach.}
+
+    \point Line 221: There appears to be a punctuation issue in "over time Sierra et al. (2021a)"; the citation should likely be placed in parentheses.
+        \reply{The citation has been corrected to a parenthetical format.}
+
+    \point Line 242: There appears to be a typo in the latitude definition, specifically "55.0S°N". Please check and correct this coordinate notation.
+        \reply{The coordinate notation has been corrected accordingly in the revised manuscript.}
+
+    \point Lines 243-262: Section 3.1 is titled broadly as spatial patterns of Carbon Sequestration, but it mainly reports NEP-based CS from X-BASE. This structure is somewhat confusing because NEP-based CS is not discussed separately in the same way in Section 3.3, and the main argument of the paper depends on comparing NEP- and NBP-based CS. It may be clearer to organize the recent observational results around this contrast from the beginning, or to merge the spatial discussion of NEP- and NBP-based CS. Also, given the title of the subsection, one would expect a more detailed discussion of spatial dynamics, including notable regional cases such as the Indian subcontinent.
+        \reply{As noted in our response to Comment 9, we have restructured the presentation of the Results section.}
+
+    \point Line 291: This sentence refers to the period 1850-2015, whereas the Methods and other parts of the paper refer to 1850-2014. Please check and make the time range consistent.
+        \reply{The correct period is indeed 1850--2014, and we have updated the text accordingly.}
+
+    \point Lines 317-318: The phrase "the most negative of CS values" is awkward; consider revising to "the most negative CS values."
+        \reply{The phrasing has been corrected as suggested by the reviewer.}
+
+    \point Lines 355-360: I would tone down the statement that shorter calculations do not account for legacy effects or are "ignoring" historical disturbances. Short-term fluxes can still be influenced by past disturbances, land-use configuration, and recovery trajectories, but a short integration window cannot include the full historical context. A longer time series may be needed to assess the state of the carbon trajectory in the context of climate change.
+        \reply{We agree that short-term fluxes are inherently shaped by past disturbances, structural land-use configurations, and ongoing ecosystem recovery trajectories. As suggested, we have toned down our phrasing to better reflect this distinction. We replaced the words ``omitted" and ``ignoring" with more precise descriptions, clarifying that short windows lack the capacity to capture the full historical context or the complete magnitude of the long-term carbon debt.}
+
+    \point Lines 392-393: The Results as presented do not directly show that high assimilation in the tropics and slower respiration responses at high latitudes explain the CS patterns. This interpretation relies partly on general biogeochemical knowledge about tropical systems (high GPP and high respiration) and high-latitude systems (lower GPP and slower carbon turnover). If this explanation is central to the Discussion, the authors likely have the GPP and respiration outputs needed to assess how much each component explains CS, and this could be shown in the Results or Supplementary Material.
+        \reply{We clarify that the underlying GPP and respiration outputs are provided in the Supplementary Material (Figs. S1 and S2), as noted in our response to Comment 5. Well-established paradigms in the biogeochemical community already show that tropical systems exhibit high photosynthetic rates and shorter transit times, while high-latitude systems feature lower GPP and longer carbon turnover. Our intention was never to present these baseline traits as an original discovery. Instead, our objective was to determine how the long-term mathematical tradeoff between these two opposing variables ultimately shapes global Carbon Sequestration (CS)—specifically, whether high inputs or slow outputs dominate the cumulative legacy balance. To prevent any misinterpretation, we have revised the phrasing throughout the manuscript to explicitly introduce these characteristics as known baseline contexts, supported by Figs. S1 and S2.}
+
+    \point Lines 402-411: This sentence could be made clearer; it is currently very long and combines several ideas.
+        \reply{We agree with the reviewer that the original sentence was overly long and combined distinct concepts. Following this recommendation, we have restructured and split the original sentence into shorter, distinct sentences to improve readability and isolate the individual concepts clearly.}
+
+    \point Lines 418-420: The statement that natural disturbances "do not in themselves create carbon debt" is unclear. Throughout the manuscript, carbon debt seems to be used mostly as negative CS. If natural disturbances can lead to negative CS, but carbon debt is intended to mean something more specific than negative CS, then the concept should be defined more strictly. Otherwise, this sentence may be better removed or rephrased.
+        \reply{We agree that natural disturbances drive negative CS balances, and acknowledge that our original phrasing did not clearly separate these temporary ecosystem fluctuations from long-term carbon deficits. Following your recommendation, we have rephrased this statement to clarify our definitions. The revised text now explicitly states that while natural events trigger transient negative CS balances, a persistent carbon debt emerges primarily when anthropogenic pressures amplify these disturbances or hinder ecosystem recovery. We supported this claim with references.}
+
+    \point Lines 425-427: Again, I would revise the explanation that data-based products lack legacy effects from previous disturbances. These products can still reflect legacy effects through current land-use configuration, ecosystem recovery, and other present-day flux consequences of past disturbance. The main limitation is the short time horizon, which prevents integration over the full historical trajectory.
+        \reply{As noted in our response to Comment 24, we agree with the reviewer. We have revised the statement to address this conceptual nuance, shifting the focus entirely toward the limitation of the temporal integration window.}
+    
+    \point Lines 480-486: The term "observational benchmarks" is doing a lot of work here. X-BASE is an upscaled data-driven product based on eddy-covariance observations, remote sensing, meteorology, and machine-learning assumptions, rather than direct observations of global NEP. The authors should clarify this when using X-BASE as a benchmark for model weighting and interpretation. Related to this, the X-BASE reference paper (Nelson and Walther et al., 2024) explicitly mentions important weaknesses, including low interannual variability, under-constrained tropical regions, and that X-BASE products are still premature for diagnosing spatial variations of mean NEE. What are the implications of these weaknesses for using X-BASE as the main benchmark product for model weighting and spatial interpretation? This should be discussed, because the weighted ensemble is only as strong as the benchmark used to construct it.
+        \reply{We acknowledged that X-BASE is a data-driven, upscaled product with documented limitations rather than direct observations. Discussion subsection 4.3 has been expanded to clarify the nature of the X-BASE benchmark and mention that its constraints, including low interannual variability and spatial uncertainties in tropical regions, impact the weighted ensemble methodology.}
+
+    \point Lines 487-495: I would tone down the statement that CS offers a ``robust framework" for climate-change mitigation policies. The metric is useful as a diagnostic or accounting tool, but not a policy framework. 
+        \reply{We agree with the reviewer that calling the CS metric a ``policy framework" overstates its scope. We have toned down this statement in the revised manuscript, explicitly rephrasing it to describe CS as an accounting tool that can support or improve protocols within existing policy mechanisms.}
+
+
+\end{reviewer}
+
+\bibliographystyle{elsarticle-harv} 
+
+\bibliography{bibio}
+
+\end{document}
+
+
+
+%\documentclass[preprint,11pt,authoryear]{elsarticle}
