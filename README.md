@@ -1,7 +1,7 @@
-# Supplementary data and code for the article "Tradeoffs between carbon assimilation and release reveal a key role of the tropics in long-term global-scale carbon sequestration" by E. Muñoz et al. and supervised by C. Sierra.
+# Supplementary data and code for the article "Temporal integration of terrestrial net carbon fluxes reveals multi-decadal carbon debts due to previous carbon legacies" by E. Muñoz et al. and supervised by C. Sierra.
 
 This repository contains code and data to reproduce all results from this publication. 
-In particular, the `Data` folder contains NetCDF files with carbon sequestration (CS) calculation using outputs from a set of models participating in CMIP6, a set of models participating in TRENDY v13, CarboScope, CAMS, and X-BASE (FLUXCOM-X).
+In particular, the `Data` folder contains NetCDF files with carbon sequestration (CS) calculations using outputs from a set of models participating in CMIP6, a set of models participating in TRENDY v13, CarboScope, CAMS, and X-BASE (FLUXCOM-X).
 The files `CMIP6_CS_nep.nc` and `CMIP6_CS_nbp.nc` contain the CS results obtained from NEP and NBP outputs from CMIP6, respectively, computed between 1850-2014, while the files `CMIP6_CS_nep_2001-2024.nc` and `CMIP6_CS_nbp_2001-2024.nc` contain the results from the shorter period 2001-2014.
 The files `TRENDY_CS_nbp_2001-2014.nc`,`CarboScope_CS_nbp_2001-2014.nc`, and `CAMS_CS_nbp_2001-2014.nc` contain the CS results from NBP outputs from TRENDY, CarboScope, and CAMS, respectively, calculated between 2001-2014. 
 The files `TRENDY_CS_nep_2001-2014.nc` and `X-BASE_CS_nee_2001-2014.nc` contain the CS results from NEP (or NEE) outputs from TRENDY and XBASE, respectively, calculated 2001-2014. 
